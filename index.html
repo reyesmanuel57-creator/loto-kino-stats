@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#10161A">
+<title>Loto &amp; Kino Stats · Generador de combinaciones</title>
+<style>
+  :root{
+    --bg:#10161A; --surface:#1A2228; --surface2:#212B33; --border:#2A343C;
+    --text:#E8EDEF; --muted:#8FA0A8; --accent:#17B8BE; --accent-dim:#0E6E72;
+    --warn:#F2A33C; --danger:#E5484D; --ok:#4CC38A; --gold:#E3B341;
+    --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;
+    padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  header{position:sticky;top:0;z-index:10;background:linear-gradient(var(--bg) 75%,rgba(16,22,26,.92));
+    backdrop-filter:blur(8px);padding:calc(12px + env(safe-area-inset-top)) 16px 0;border-bottom:1px solid var(--border)}
+  .brand{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+  .brand h1{font-size:17px;font-weight:700;letter-spacing:.02em}
+  .brand span{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+  .tabbar{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabbar::-webkit-scrollbar{display:none}
+  .tabbtn{flex:0 0 auto;padding:9px 14px;border-radius:10px 10px 0 0;border:1px solid transparent;background:none;
+    color:var(--muted);font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:var(--sans)}
+  .tabbtn.on{color:var(--accent);border-bottom:2px solid var(--accent)}
+  main{padding:12px 16px;max-width:820px;margin:0 auto}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  h2.stitle{font-size:15px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--text);
+    margin:18px 2px 10px}
+  h2.stitle:first-child{margin-top:2px}
+  .banner{background:rgba(23,184,190,.08);border:1px solid var(--accent-dim);border-radius:12px;padding:12px 14px;
+    font-size:13.5px;color:var(--text);margin-bottom:14px;line-height:1.5}
+  .banner.warn{background:rgba(242,163,60,.1);border-color:rgba(242,163,60,.4)}
+  .banner strong{color:var(--accent)}
+  .banner.warn strong{color:var(--warn)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:12px}
+  .card h3{font-size:14px;margin-bottom:10px}
+  .seg{display:flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:12px;flex-wrap:wrap}
+  .seg button{flex:1;min-width:70px;padding:9px 6px;background:var(--surface);color:var(--muted);border:none;
+    font-size:12.5px;font-weight:700;cursor:pointer}
+  .seg button.on{background:var(--accent-dim);color:#DFF7F8}
+  .balls{display:flex;flex-wrap:wrap;gap:6px}
+  .ball{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-weight:700;font-size:13px;background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+  .ball.big{width:40px;height:40px;font-size:14px}
+  .ball.comodin{background:rgba(227,179,65,.15);border-color:var(--gold);color:var(--gold)}
+  .drawrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+  .drawrow:first-child{border-top:none}
+  .drawmeta{flex:0 0 auto;width:84px}
+  .drawmeta .id{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
+  .drawmeta .dt{font-size:11px;color:var(--muted)}
+  .freqlist{display:flex;flex-direction:column;gap:6px}
+  .freqrow{display:flex;align-items:center;gap:8px}
+  .freqrow .num{font-family:var(--mono);font-size:12.5px;font-weight:700;width:28px;flex:0 0 auto}
+  .freqrow .bar{flex:1;height:10px;background:var(--surface2);border-radius:6px;overflow:hidden}
+  .freqrow .bar > i{display:block;height:100%;background:var(--accent-dim)}
+  .freqrow.cold .bar > i{background:rgba(242,163,60,.6)}
+  .freqrow .ct{font-family:var(--mono);font-size:11.5px;color:var(--muted);width:38px;text-align:right;flex:0 0 auto}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){ .grid2{grid-template-columns:1fr} }
+  .btn{appearance:none;border:1px solid var(--border);background:var(--surface2);color:var(--text);
+    border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;cursor:pointer;min-height:44px}
+  .btn.primary{background:var(--accent-dim);border-color:var(--accent);color:#DFF7F8}
+  .btn.small{min-height:36px;padding:7px 12px;font-size:13px}
+  .btn.block{width:100%}
+  .field{margin-bottom:12px}
+  .field label{display:block;font-size:12px;font-family:var(--mono);text-transform:uppercase;
+    letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+  .field input,.field select{width:100%;padding:11px 12px;font-size:16px;background:var(--surface);
+    color:var(--text);border:1px solid var(--border);border-radius:10px;outline:none;font-family:var(--sans)}
+  .field input.mono{font-family:var(--mono);font-size:14.5px}
+  .field input:focus,.field select:focus{border-color:var(--accent)}
+  .row{display:flex;gap:10px}
+  .row > .field{flex:1}
+  .genresult{margin-top:12px}
+  .genrow{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--border)}
+  .genrow:first-child{border-top:none}
+  .genrow .lbl{font-size:11px;color:var(--muted);font-family:var(--mono);width:22px;flex:0 0 auto}
+  .hint{font-size:12px;color:var(--muted);margin-top:4px}
+  .toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);
+    background:var(--surface2);border:1px solid var(--accent);color:var(--text);padding:10px 18px;border-radius:12px;
+    font-size:14px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+  .toast.show{opacity:1}
+  .modal{position:fixed;inset:0;background:rgba(8,12,14,.7);z-index:50;display:none;overflow-y:auto}
+  .modal.show{display:block}
+  .sheet{background:var(--bg);max-width:520px;margin:24px auto;border:1px solid var(--border);border-radius:16px;
+    padding:18px 16px calc(18px + env(safe-area-inset-bottom))}
+  .sheet h3{font-size:16px;margin-bottom:14px;font-family:var(--mono);letter-spacing:.03em}
+  .form-actions{display:flex;gap:10px;margin-top:16px}
+  .form-actions .btn{flex:1}
+  .source{font-size:11.5px;color:var(--muted);margin-top:10px}
+  .source a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1>🎲 Loto &amp; Kino Stats</h1>
+    <span>Generador de combinaciones</span>
+  </div>
+  <div class="tabbar" id="tabbar">
+    <button class="tabbtn on" data-tab="loto">Loto</button>
+    <button class="tabbtn" data-tab="kino">Kino</button>
+    <button class="tabbtn" data-tab="info">Info y datos</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== TAB: LOTO (+ Recargado/Revancha/Desquite) ===================== -->
+<section class="tab-panel active" id="tab-loto">
+  <div class="banner warn">
+    <strong>Importante.</strong> Cada sorteo es un evento independiente: la probabilidad de cada número es
+    siempre la misma (1/41), sin importar cuántas veces haya salido antes. Esta herramienta es solo para
+    curiosidad/entretenimiento — no existe ninguna combinación con más chance real de ganar.
+  </div>
+
+  <div class="seg" id="segLotoJuego">
+    <button class="on" data-juego="loto">Loto Principal</button>
+    <button data-juego="recargado">Recargado</button>
+    <button data-juego="revancha">Revancha</button>
+    <button data-juego="desquite">Desquite</button>
+  </div>
+
+  <div class="card">
+    <h3 id="lotoGenTitle">Generador — Loto Principal</h3>
+    <div class="row">
+      <div class="field"><label>Modo</label>
+        <select id="loto_modo">
+          <option value="random">Aleatorio puro</option>
+          <option value="hot">Favorece calientes (más frecuentes)</option>
+          <option value="cold">Favorece fríos (más atrasados)</option>
+          <option value="mix">Mixto (calientes + fríos + azar)</option>
+          <option value="nn">🧠 Red neuronal (experimental)</option>
+        </select>
+      </div>
+      <div class="field"><label>Combinaciones</label>
+        <select id="loto_cant">
+          <option value="1">1</option><option value="2">2</option><option value="3" selected>3</option>
+          <option value="5">5</option><option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="banner warn" id="loto_nn_info" style="display:none;margin-bottom:12px"></div>
+    <button class="btn primary block" onclick="generarLoto()">🎲 Generar combinaciones</button>
+    <div class="genresult" id="lotoGenResult"></div>
+  </div>
+
+  <h2 class="stitle">Frecuencia de números (últimos sorteos cargados)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>🔥 Top calientes</h3>
+      <div class="freqlist" id="lotoHot"></div>
+    </div>
+    <div class="card">
+      <h3>🧊 Top atrasados</h3>
+      <div class="freqlist" id="lotoCold"></div>
+    </div>
+  </div>
+
+  <h2 class="stitle">Historial de sorteos</h2>
+  <div class="card" id="lotoHistCard">
+    <div id="lotoHistList"></div>
+  </div>
+</section>
+
+<!-- ===================== TAB: KINO ===================== -->
+<section class="tab-panel" id="tab-kino">
+  <div class="banner warn">
+    <strong>Importante.</strong> En Kino cada número tiene la misma probabilidad en cada sorteo (14 de 25
+    números salen al azar). El historial no influye en el próximo sorteo — esta herramienta es solo referencial.
+  </div>
+
+  <div class="card">
+    <h3>Generador — Kino</h3>
+    <div class="row">
+      <div class="field"><label>Modo</label>
+        <select id="kino_modo">
+          <option value="random">Aleatorio puro</option>
+          <option value="hot">Favorece calientes</option>
+          <option value="cold">Favorece fríos</option>
+          <option value="mix">Mixto</option>
+          <option value="nn">🧠 Red neuronal (experimental)</option>
+        </select>
+      </div>
+      <div class="field"><label>Cantidad de números</label>
+        <select id="kino_n">
+          <option value="8">8</option><option value="9">9</option><option value="10">10</option>
+          <option value="11">11</option><option value="12">12</option><option value="13">13</option>
+          <option value="14" selected>14</option>
+        </select>
+      </div>
+    </div>
+    <div class="field"><label>Combinaciones</label>
+      <select id="kino_cant">
+        <option value="1">1</option><option value="2">2</option><option value="3" selected>3</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="banner warn" id="kino_nn_info" style="display:none;margin-bottom:12px"></div>
+    <button class="btn primary block" onclick="generarKino()">🎲 Generar combinaciones</button>
+    <div class="genresult" id="kinoGenResult"></div>
+  </div>
+
+  <h2 class="stitle">Frecuencia de números (últimos sorteos cargados)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>🔥 Top calientes</h3>
+      <div class="freqlist" id="kinoHot"></div>
+    </div>
+    <div class="card">
+      <h3>🧊 Top atrasados</h3>
+      <div class="freqlist" id="kinoCold"></div>
+    </div>
+  </div>
+
+  <h2 class="stitle">Historial de sorteos</h2>
+  <div class="card" id="kinoHistCard">
+    <div id="kinoHistList"></div>
+  </div>
+</section>
+
+<!-- ===================== TAB: INFO Y DATOS ===================== -->
+<section class="tab-panel" id="tab-info">
+  <div class="banner">
+    <strong>Cómo funciona.</strong> Esta app calcula frecuencia (calientes/fríos) sobre los sorteos cargados
+    y genera combinaciones aleatorias o ponderadas según esa frecuencia. Es una herramienta estadística
+    de entretenimiento: no predice resultados ni mejora las probabilidades reales de ganar, que son fijas
+    e independientes en cada sorteo.
+  </div>
+  <div class="banner warn">
+    <strong>Sobre el modo "Red neuronal".</strong> Es un experimento técnico: entrena una red neuronal
+    (TensorFlow.js, corre en tu navegador) con el historial cargado, y se reentrena automáticamente cada vez
+    que agregas un sorteo nuevo — es decir, "aprende" de forma continua. Pero un sorteo real es un evento
+    físico aleatorio e independiente: ningún modelo, por más que se reentrene, puede predecirlo mejor que el
+    azar. En la práctica, su salida termina pareciéndose a la frecuencia histórica ponderada. Inclúyelo solo
+    por curiosidad técnica, no como estrategia de apuesta.
+  </div>
+  <div class="banner warn">
+    <strong>Sobre los datos.</strong> Los sorteos precargados (15 más recientes de Loto y 15 de Kino al momento
+    de crear esta app) se obtuvieron de <a href="https://chileresultados.com" target="_blank" rel="noopener" style="color:var(--warn)">chileresultados.com</a>,
+    un sitio de terceros no oficial. Verifica siempre los resultados oficiales en
+    <a href="https://www.polla.cl" target="_blank" rel="noopener" style="color:var(--warn)">polla.cl</a>.
+    Agrega manualmente los sorteos nuevos para mantener el historial al día.
+  </div>
+
+  <h2 class="stitle" style="margin-top:2px">Actualización automática</h2>
+  <div class="card">
+    <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px">
+      Una tarea programada revisa cada 12 horas si hay sorteos nuevos y actualiza <code>data.json</code> en el
+      repositorio. Cada vez que abres esta app, se descarga esa versión más reciente, se suma a tu historial y
+      el modelo de red neuronal se reentrena solo si hay sorteos nuevos.
+    </p>
+    <button class="btn block" onclick="syncRemoteData(true)">🔄 Buscar sorteos nuevos ahora</button>
+    <p class="hint" id="syncStatus"></p>
+  </div>
+
+  <h2 class="stitle">Agregar sorteo</h2>
+  <div class="card">
+    <button class="btn primary block" onclick="openAddDraw()">＋ Agregar sorteo manualmente</button>
+    <p class="hint">También puedes sumar un sorteo a mano si la actualización automática aún no lo tiene.</p>
+  </div>
+
+  <h2 class="stitle">Respaldo de datos</h2>
+  <div class="card">
+    <button class="btn primary block" id="exportBtn" style="margin-bottom:10px">⬇ Exportar todo (JSON)</button>
+    <button class="btn block" id="importBtn">⬆ Importar JSON</button>
+    <input type="file" id="importFile" accept=".json,application/json" style="display:none">
+    <p class="hint">Los datos se guardan en este navegador (localStorage). Exporta un respaldo periódicamente.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- Modal agregar sorteo -->
+<div class="modal" id="drawModal">
+  <div class="sheet">
+    <h3>NUEVO SORTEO</h3>
+    <div class="field"><label>Juego</label>
+      <select id="d_juego">
+        <option value="loto">Loto Principal (6 núm. 1-41 + comodín)</option>
+        <option value="recargado">Recargado (6 núm. 1-41)</option>
+        <option value="revancha">Revancha (6 núm. 1-41)</option>
+        <option value="desquite">Desquite (6 núm. 1-41)</option>
+        <option value="kino">Kino (14 núm. 1-25)</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="field"><label>N° de sorteo</label><input id="d_sorteo" class="mono" placeholder="Ej: 5449"></div>
+      <div class="field"><label>Fecha</label><input id="d_fecha" type="date"></div>
+    </div>
+    <div class="field"><label>Números (separados por espacio o coma)</label>
+      <input id="d_numeros" class="mono" placeholder="Ej: 03 08 11 16 20 37">
+    </div>
+    <div class="field" id="d_comodin_wrap"><label>Comodín (solo Loto Principal)</label>
+      <input id="d_comodin" class="mono" placeholder="Ej: 26">
+    </div>
+    <div class="form-actions">
+      <button class="btn" onclick="closeAddDraw()">Cancelar</button>
+      <button class="btn primary" onclick="saveDraw()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+
+/* ============================================================
+   RANGOS POR JUEGO
+   ============================================================ */
+const RANGE={loto:41,recargado:41,revancha:41,desquite:41,kino:25};
+const NAMES={loto:'Loto Principal',recargado:'Recargado',revancha:'Revancha',desquite:'Desquite',kino:'Kino'};
+
+/* ============================================================
+   DATOS SEMILLA — últimos sorteos públicos (chileresultados.com)
+   ============================================================ */
+const SEED_LOTO=[
+ {sorteo:5448,fecha:'2026-07-07',numeros:[8,18,20,21,33,34],comodin:22},
+ {sorteo:5447,fecha:'2026-07-05',numeros:[7,14,15,21,27,28],comodin:2},
+ {sorteo:5446,fecha:'2026-07-02',numeros:[2,10,12,17,18,27],comodin:3},
+ {sorteo:5445,fecha:'2026-06-30',numeros:[10,13,17,20,27,28],comodin:5},
+ {sorteo:5444,fecha:'2026-06-28',numeros:[17,20,28,35,36,40],comodin:38},
+ {sorteo:5443,fecha:'2026-06-25',numeros:[7,8,11,13,20,35],comodin:14},
+ {sorteo:5442,fecha:'2026-06-23',numeros:[11,18,21,23,26,33],comodin:32},
+ {sorteo:5441,fecha:'2026-06-21',numeros:[13,15,17,18,21,31],comodin:2},
+ {sorteo:5440,fecha:'2026-06-18',numeros:[7,17,19,22,24,33],comodin:6},
+ {sorteo:5439,fecha:'2026-06-16',numeros:[2,6,10,36,37,40],comodin:35},
+ {sorteo:5438,fecha:'2026-06-14',numeros:[5,10,14,23,38,41],comodin:32},
+ {sorteo:5437,fecha:'2026-06-11',numeros:[3,8,11,16,20,37],comodin:26},
+ {sorteo:5436,fecha:'2026-06-09',numeros:[4,11,15,17,35,41],comodin:3},
+ {sorteo:5435,fecha:'2026-06-07',numeros:[14,15,20,24,31,40],comodin:38},
+ {sorteo:5434,fecha:'2026-06-04',numeros:[1,9,10,24,28,35],comodin:22}
+];
+const SEED_RECARGADO=[
+ {sorteo:5448,fecha:'2026-07-07',numeros:[1,2,12,16,33,36]},
+ {sorteo:5447,fecha:'2026-07-05',numeros:[15,23,29,30,35,40]},
+ {sorteo:5446,fecha:'2026-07-02',numeros:[5,10,25,26,33,41]},
+ {sorteo:5445,fecha:'2026-06-30',numeros:[7,17,23,24,35,38]},
+ {sorteo:5444,fecha:'2026-06-28',numeros:[16,19,27,34,35,41]},
+ {sorteo:5443,fecha:'2026-06-25',numeros:[9,15,16,18,22,39]},
+ {sorteo:5442,fecha:'2026-06-23',numeros:[2,16,18,20,30,39]},
+ {sorteo:5441,fecha:'2026-06-21',numeros:[10,11,17,20,23,30]},
+ {sorteo:5440,fecha:'2026-06-18',numeros:[14,15,16,24,35,39]},
+ {sorteo:5439,fecha:'2026-06-16',numeros:[4,11,30,35,38,39]},
+ {sorteo:5438,fecha:'2026-06-14',numeros:[6,18,21,28,33,39]},
+ {sorteo:5437,fecha:'2026-06-11',numeros:[2,11,16,32,38,40]},
+ {sorteo:5436,fecha:'2026-06-09',numeros:[3,17,19,33,35,41]},
+ {sorteo:5435,fecha:'2026-06-07',numeros:[3,13,20,27,29,40]},
+ {sorteo:5434,fecha:'2026-06-04',numeros:[8,10,13,18,23,33]}
+];
+const SEED_REVANCHA=[
+ {sorteo:5448,fecha:'2026-07-07',numeros:[4,5,15,26,28,39]},
+ {sorteo:5447,fecha:'2026-07-05',numeros:[14,23,25,28,33,38]},
+ {sorteo:5446,fecha:'2026-07-02',numeros:[2,11,22,27,31,34]},
+ {sorteo:5445,fecha:'2026-06-30',numeros:[1,13,18,21,29,36]},
+ {sorteo:5444,fecha:'2026-06-28',numeros:[2,3,6,12,25,28]},
+ {sorteo:5443,fecha:'2026-06-25',numeros:[6,17,24,28,36,39]},
+ {sorteo:5442,fecha:'2026-06-23',numeros:[5,12,17,19,21,38]},
+ {sorteo:5441,fecha:'2026-06-21',numeros:[9,10,17,21,28,39]},
+ {sorteo:5440,fecha:'2026-06-18',numeros:[6,27,30,31,36,41]},
+ {sorteo:5439,fecha:'2026-06-16',numeros:[3,19,33,36,38,41]},
+ {sorteo:5438,fecha:'2026-06-14',numeros:[16,19,26,30,37,38]},
+ {sorteo:5437,fecha:'2026-06-11',numeros:[5,15,21,23,31,33]},
+ {sorteo:5436,fecha:'2026-06-09',numeros:[7,10,11,13,14,19]},
+ {sorteo:5435,fecha:'2026-06-07',numeros:[1,2,13,18,28,34]},
+ {sorteo:5434,fecha:'2026-06-04',numeros:[1,16,23,26,36,37]}
+];
+const SEED_DESQUITE=[
+ {sorteo:5448,fecha:'2026-07-07',numeros:[10,13,18,23,30,37]},
+ {sorteo:5447,fecha:'2026-07-05',numeros:[3,7,17,22,25,36]},
+ {sorteo:5446,fecha:'2026-07-02',numeros:[4,6,13,30,31,39]},
+ {sorteo:5445,fecha:'2026-06-30',numeros:[2,19,28,33,34,38]},
+ {sorteo:5444,fecha:'2026-06-28',numeros:[5,17,18,24,40,41]},
+ {sorteo:5443,fecha:'2026-06-25',numeros:[7,14,16,19,28,37]},
+ {sorteo:5442,fecha:'2026-06-23',numeros:[5,6,17,28,35,37]},
+ {sorteo:5441,fecha:'2026-06-21',numeros:[4,11,16,22,26,32]},
+ {sorteo:5440,fecha:'2026-06-18',numeros:[5,22,23,30,37,40]},
+ {sorteo:5439,fecha:'2026-06-16',numeros:[5,7,16,36,39,40]},
+ {sorteo:5438,fecha:'2026-06-14',numeros:[2,4,13,19,21,37]},
+ {sorteo:5437,fecha:'2026-06-11',numeros:[1,2,11,15,22,32]},
+ {sorteo:5436,fecha:'2026-06-09',numeros:[3,31,32,34,37,41]},
+ {sorteo:5435,fecha:'2026-06-07',numeros:[15,16,19,25,39,40]},
+ {sorteo:5434,fecha:'2026-06-04',numeros:[7,23,27,32,33,37]}
+];
+const SEED_KINO=[
+ {sorteo:3250,fecha:'2026-07-08',numeros:[1,2,4,5,8,12,13,15,17,19,20,21,24,25]},
+ {sorteo:3249,fecha:'2026-07-05',numeros:[2,5,8,10,11,12,14,17,19,20,21,23,24,25]},
+ {sorteo:3248,fecha:'2026-07-03',numeros:[3,6,7,8,9,11,15,16,17,18,20,22,23,25]},
+ {sorteo:3247,fecha:'2026-07-01',numeros:[1,3,4,6,7,8,9,10,13,14,20,22,23,25]},
+ {sorteo:3246,fecha:'2026-06-28',numeros:[1,3,4,6,7,9,16,17,18,20,21,22,23,24]},
+ {sorteo:3245,fecha:'2026-06-26',numeros:[1,3,5,6,7,8,9,10,15,17,20,21,22,25]},
+ {sorteo:3244,fecha:'2026-06-24',numeros:[3,5,6,7,9,11,14,15,16,17,20,23,24,25]},
+ {sorteo:3243,fecha:'2026-06-21',numeros:[1,2,6,8,10,11,12,14,16,17,18,23,24,25]},
+ {sorteo:3242,fecha:'2026-06-19',numeros:[1,3,5,7,8,10,14,15,18,19,20,21,22,23]},
+ {sorteo:3241,fecha:'2026-06-17',numeros:[3,5,6,7,9,11,14,15,16,20,21,22,23,24]},
+ {sorteo:3240,fecha:'2026-06-14',numeros:[1,2,3,4,9,11,12,13,16,17,18,20,24,25]},
+ {sorteo:3239,fecha:'2026-06-12',numeros:[2,3,4,8,9,10,12,13,17,18,19,20,22,24]},
+ {sorteo:3238,fecha:'2026-06-10',numeros:[1,2,5,6,13,14,16,18,19,20,22,23,24,25]},
+ {sorteo:3237,fecha:'2026-06-07',numeros:[1,3,5,6,7,8,10,12,13,15,16,20,23,25]},
+ {sorteo:3236,fecha:'2026-06-05',numeros:[2,4,5,7,8,10,12,14,15,17,18,22,23,24]}
+];
+
+/* ============================================================
+   ALMACENAMIENTO
+   ============================================================ */
+const KEY='loto_kino_stats_v1';
+let mem=null,storageOK=true;
+function loadDB(){
+  try{ const raw=localStorage.getItem(KEY); return raw?JSON.parse(raw):null; }
+  catch(e){ storageOK=false; return mem; }
+}
+function saveDB(){
+  try{ localStorage.setItem(KEY,JSON.stringify(DB)); }
+  catch(e){ storageOK=false; }
+  mem=DB;
+}
+let DB=loadDB();
+if(!DB){
+  DB={loto:SEED_LOTO,recargado:SEED_RECARGADO,revancha:SEED_REVANCHA,desquite:SEED_DESQUITE,kino:SEED_KINO};
+  saveDB();
+}
+
+/* ============================================================
+   ESTADÍSTICAS
+   ============================================================ */
+function sortedDraws(juego){
+  return [...DB[juego]].sort((a,b)=> b.sorteo-a.sorteo);
+}
+function frequency(juego){
+  const range=RANGE[juego];
+  const freq={};
+  for(let i=1;i<=range;i++) freq[i]=0;
+  DB[juego].forEach(d=> d.numeros.forEach(n=> freq[n]=(freq[n]||0)+1));
+  return freq;
+}
+function atraso(juego){
+  const range=RANGE[juego];
+  const draws=sortedDraws(juego); // más reciente primero
+  const last={};
+  for(let i=1;i<=range;i++) last[i]=draws.length; // si nunca salió, atraso = total sorteos
+  draws.forEach((d,idx)=>{
+    d.numeros.forEach(n=>{ if(last[n]===draws.length || last[n]===undefined) last[n]=idx; });
+  });
+  // recorrer de más antiguo a más nuevo para fijar la última aparición real (idx más bajo = más reciente)
+  const seen={};
+  draws.forEach((d,idx)=>{ d.numeros.forEach(n=>{ if(!(n in seen)) seen[n]=idx; }); });
+  const result={};
+  for(let i=1;i<=range;i++) result[i] = (i in seen) ? seen[i] : draws.length;
+  return result;
+}
+
+function renderFreqList(elId,juego,mode){
+  const freq=frequency(juego);
+  const atr=atraso(juego);
+  const nums=Object.keys(freq).map(Number);
+  let sorted;
+  if(mode==='hot'){ sorted=[...nums].sort((a,b)=> freq[b]-freq[a] || a-b).slice(0,8); }
+  else{ sorted=[...nums].sort((a,b)=> atr[b]-atr[a] || a-b).slice(0,8); }
+  const maxVal = mode==='hot' ? Math.max(1,...sorted.map(n=>freq[n])) : Math.max(1,...sorted.map(n=>atr[n]));
+  $(elId).innerHTML=sorted.map(n=>{
+    const val = mode==='hot' ? freq[n] : atr[n];
+    const pct = Math.max(6,Math.round(val/maxVal*100));
+    return `<div class="freqrow ${mode==='cold'?'cold':''}">
+      <span class="num">${String(n).padStart(2,'0')}</span>
+      <span class="bar"><i style="width:${pct}%"></i></span>
+      <span class="ct">${mode==='hot'? val+'x' : val+' sort.'}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderHistList(elId,juego){
+  const draws=sortedDraws(juego);
+  $(elId).innerHTML=draws.map(d=>`
+    <div class="drawrow">
+      <div class="drawmeta"><div class="id">#${d.sorteo}</div><div class="dt">${d.fecha}</div></div>
+      <div class="balls">
+        ${d.numeros.map(n=>`<span class="ball">${String(n).padStart(2,'0')}</span>`).join('')}
+        ${d.comodin!==undefined? `<span class="ball comodin">${String(d.comodin).padStart(2,'0')}</span>`:''}
+      </div>
+    </div>`).join('') + `<p class="source">Fuente de datos precargados: <a href="https://chileresultados.com" target="_blank" rel="noopener">chileresultados.com</a> (no oficial). Agrega sorteos nuevos en la pestaña Info.</p>`;
+}
+
+/* ============================================================
+   RED NEURONAL (TensorFlow.js) — experimento técnico
+   ------------------------------------------------------------
+   Entrena una red pequeña sobre el historial cargado para cada
+   juego y se reentrena automáticamente cada vez que se agrega un
+   sorteo nuevo ("aprendizaje continuo"). IMPORTANTE: un sorteo real
+   es un evento aleatorio e independiente — ningún modelo puede
+   predecirlo mejor que el azar. Esto es solo un ejercicio técnico;
+   su salida termina aproximándose a la frecuencia histórica.
+   ============================================================ */
+const NN={models:{},status:{}};
+
+function buildDataset(juego){
+  const draws=[...DB[juego]].sort((a,b)=>a.sorteo-b.sorteo);
+  const R=RANGE[juego];
+  const X=[],Y=[];
+  const c=new Array(R).fill(0);
+  draws.forEach((d,i)=>{
+    X.push(c.map(v=> i>0 ? v/i : 0));
+    const y=new Array(R).fill(0);
+    d.numeros.forEach(n=> y[n-1]=1);
+    Y.push(y);
+    d.numeros.forEach(n=> c[n-1]+=1);
+  });
+  return {X,Y,R,total:draws.length,finalFreq:c};
+}
+
+function nnInfoElId(juego){
+  return ['loto','recargado','revancha','desquite'].includes(juego) ? 'loto_nn_info' : 'kino_nn_info';
+}
+
+function renderNNStatus(juego){
+  const el=$(nnInfoElId(juego)); if(!el) return;
+  const st=NN.status[juego];
+  if(!st){ el.style.display='none'; return; }
+  el.style.display='block';
+  if(st.training){ el.innerHTML='🧠 Entrenando modelo con los sorteos de '+NAMES[juego]+' cargados…'; return; }
+  if(st.error){ el.innerHTML='⚠ '+st.error; return; }
+  if(st.trained){
+    el.innerHTML=`🧠 <strong>Modelo entrenado</strong> con ${st.n} sorteos de ${NAMES[juego]} (pérdida final: ${st.loss.toFixed(4)}).
+      Se reentrena solo cada vez que agregas un sorteo nuevo. Recuerda: esto no predice el próximo sorteo, solo
+      pondera según el historial.`;
+  }
+}
+
+async function trainModel(juego){
+  if(typeof tf==='undefined'){
+    NN.status[juego]={trained:false,training:false,error:'TensorFlow.js no cargó (revisa tu conexión a internet).'};
+    renderNNStatus(juego);
+    return;
+  }
+  const {X,Y,R,total,finalFreq}=buildDataset(juego);
+  if(total<4){
+    NN.status[juego]={trained:false,training:false,error:'Faltan sorteos cargados (mínimo 4) para entrenar el modelo de '+NAMES[juego]+'.'};
+    renderNNStatus(juego);
+    return;
+  }
+  NN.status[juego]={...(NN.status[juego]||{}),training:true};
+  renderNNStatus(juego);
+  await new Promise(r=>setTimeout(r,10));
+  try{
+    const xs=tf.tensor2d(X);
+    const ys=tf.tensor2d(Y);
+    const model=tf.sequential();
+    model.add(tf.layers.dense({units:16,activation:'relu',inputShape:[R]}));
+    model.add(tf.layers.dense({units:R,activation:'sigmoid'}));
+    model.compile({optimizer:tf.train.adam(0.05),loss:'binaryCrossentropy'});
+    const hist=await model.fit(xs,ys,{epochs:120,batchSize:total,verbose:0});
+    const finalLoss=hist.history.loss[hist.history.loss.length-1];
+    const xNext=tf.tensor2d([finalFreq.map(v=> v/total)]);
+    const predTensor=model.predict(xNext);
+    const scores=Array.from(await predTensor.data());
+    xs.dispose(); ys.dispose(); xNext.dispose(); predTensor.dispose();
+    if(NN.models[juego]) NN.models[juego].dispose();
+    NN.models[juego]=model;
+    NN.status[juego]={trained:true,training:false,n:total,loss:finalLoss,scores};
+  }catch(e){
+    NN.status[juego]={trained:false,training:false,error:'Error entrenando el modelo: '+e.message};
+  }
+  renderNNStatus(juego);
+}
+
+function trainAllModelsQuietly(){
+  if(typeof tf==='undefined') return;
+  Object.keys(RANGE).forEach(juego=>{ trainModel(juego).catch(()=>{}); });
+}
+
+/* ============================================================
+   GENERADOR DE COMBINACIONES
+   ============================================================ */
+function weightedPick(range,weights,count){
+  const pool=[]; for(let i=1;i<=range;i++) pool.push(i);
+  const picked=[];
+  const w={...weights};
+  for(let k=0;k<count && pool.length;k++){
+    const remaining=pool.filter(n=>!picked.includes(n));
+    const total=remaining.reduce((s,n)=> s+(w[n]||1),0);
+    let r=Math.random()*total;
+    let chosen=remaining[remaining.length-1];
+    for(const n of remaining){ r-=(w[n]||1); if(r<=0){ chosen=n; break; } }
+    picked.push(chosen);
+  }
+  return picked.sort((a,b)=>a-b);
+}
+function randomPick(range,count){
+  const pool=[]; for(let i=1;i<=range;i++) pool.push(i);
+  const picked=[];
+  for(let k=0;k<count && pool.length;k++){
+    const idx=Math.floor(Math.random()*pool.length);
+    picked.push(pool.splice(idx,1)[0]);
+  }
+  return picked.sort((a,b)=>a-b);
+}
+function generarCombinaciones(juego,modo,count,howMany){
+  const range=RANGE[juego];
+  const freq=frequency(juego);
+  const atr=atraso(juego);
+  const combos=[];
+  for(let c=0;c<howMany;c++){
+    let combo;
+    if(modo==='random'){ combo=randomPick(range,count); }
+    else if(modo==='hot'){ const w={}; for(let i=1;i<=range;i++) w[i]=freq[i]+1; combo=weightedPick(range,w,count); }
+    else if(modo==='cold'){ const w={}; for(let i=1;i<=range;i++) w[i]=atr[i]+1; combo=weightedPick(range,w,count); }
+    else if(modo==='nn'){
+      const st=NN.status[juego];
+      const w={};
+      if(st && st.trained && st.scores){
+        for(let i=1;i<=range;i++) w[i]=st.scores[i-1]+0.01;
+      }else{
+        // el modelo aún no está listo: usamos frecuencia como respaldo temporal
+        for(let i=1;i<=range;i++) w[i]=freq[i]+1;
+      }
+      combo=weightedPick(range,w,count);
+    }
+    else{ // mix: mitad calientes, mitad frías, resto azar
+      const nHot=Math.ceil(count/3), nCold=Math.ceil(count/3);
+      const wHot={}; for(let i=1;i<=range;i++) wHot[i]=freq[i]+1;
+      const wCold={}; for(let i=1;i<=range;i++) wCold[i]=atr[i]+1;
+      let picked=[...weightedPick(range,wHot,nHot)];
+      let coldPicks=weightedPick(range,wCold,range).filter(n=>!picked.includes(n)).slice(0,nCold);
+      picked=picked.concat(coldPicks);
+      while(picked.length<count){
+        const r=randomPick(range,1)[0];
+        if(!picked.includes(r)) picked.push(r);
+      }
+      combo=picked.slice(0,count).sort((a,b)=>a-b);
+    }
+    combos.push(combo);
+  }
+  return combos;
+}
+
+function renderCombos(elId,combos,comodinRange){
+  $(elId).innerHTML = combos.map((c,i)=>{
+    const comodin = comodinRange ? randomPick(comodinRange,1)[0] : null;
+    return `<div class="genrow">
+      <span class="lbl">${i+1}</span>
+      <div class="balls">
+        ${c.map(n=>`<span class="ball big">${String(n).padStart(2,'0')}</span>`).join('')}
+        ${comodin!==null? `<span class="ball big comodin">${String(comodin).padStart(2,'0')}</span>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function generarLoto(){
+  const juego=lotoJuegoActivo;
+  const modo=$('loto_modo').value;
+  const cant=+$('loto_cant').value;
+  if(modo==='nn' && (!NN.status[juego] || !NN.status[juego].trained)){
+    await trainModel(juego);
+  }
+  const combos=generarCombinaciones(juego,modo,6,cant);
+  renderCombos('lotoGenResult',combos, juego==='loto'?41:null);
+  toast('Combinaciones generadas');
+}
+async function generarKino(){
+  const modo=$('kino_modo').value;
+  const n=+$('kino_n').value;
+  const cant=+$('kino_cant').value;
+  if(modo==='nn' && (!NN.status.kino || !NN.status.kino.trained)){
+    await trainModel('kino');
+  }
+  const combos=generarCombinaciones('kino',modo,n,cant);
+  renderCombos('kinoGenResult',combos,null);
+  toast('Combinaciones generadas');
+}
+
+/* ============================================================
+   NAVEGACIÓN
+   ============================================================ */
+let lotoJuegoActivo='loto';
+function renderLotoTab(){
+  $('lotoGenTitle').textContent='Generador — '+NAMES[lotoJuegoActivo];
+  renderFreqList('lotoHot',lotoJuegoActivo,'hot');
+  renderFreqList('lotoCold',lotoJuegoActivo,'cold');
+  renderHistList('lotoHistList',lotoJuegoActivo);
+  $('lotoGenResult').innerHTML='';
+  if($('loto_modo').value==='nn'){ renderNNStatus(lotoJuegoActivo); } else { $('loto_nn_info').style.display='none'; }
+}
+function renderKinoTab(){
+  renderFreqList('kinoHot','kino','hot');
+  renderFreqList('kinoCold','kino','cold');
+  renderHistList('kinoHistList','kino');
+  $('kinoGenResult').innerHTML='';
+  if($('kino_modo').value==='nn'){ renderNNStatus('kino'); } else { $('kino_nn_info').style.display='none'; }
+}
+
+$('loto_modo').addEventListener('change',()=>{
+  if($('loto_modo').value==='nn'){
+    renderNNStatus(lotoJuegoActivo);
+    if(!NN.status[lotoJuegoActivo] || !NN.status[lotoJuegoActivo].trained) trainModel(lotoJuegoActivo);
+  }else{ $('loto_nn_info').style.display='none'; }
+});
+$('kino_modo').addEventListener('change',()=>{
+  if($('kino_modo').value==='nn'){
+    renderNNStatus('kino');
+    if(!NN.status.kino || !NN.status.kino.trained) trainModel('kino');
+  }else{ $('kino_nn_info').style.display='none'; }
+});
+
+$('tabbar').addEventListener('click',ev=>{
+  const b=ev.target.closest('.tabbtn'); if(!b) return;
+  document.querySelectorAll('#tabbar .tabbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const tab=b.dataset.tab;
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  $('tab-'+tab).classList.add('active');
+});
+$('segLotoJuego').addEventListener('click',ev=>{
+  const b=ev.target.closest('button'); if(!b) return;
+  $('segLotoJuego').querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  lotoJuegoActivo=b.dataset.juego;
+  renderLotoTab();
+});
+
+/* ============================================================
+   AGREGAR SORTEO MANUAL
+   ============================================================ */
+function openAddDraw(){
+  $('d_sorteo').value=''; $('d_fecha').value=''; $('d_numeros').value=''; $('d_comodin').value='';
+  $('drawModal').classList.add('show');
+  toggleComodinField();
+}
+function closeAddDraw(){ $('drawModal').classList.remove('show'); }
+$('d_juego').addEventListener('change',toggleComodinField);
+function toggleComodinField(){
+  $('d_comodin_wrap').style.display = $('d_juego').value==='loto' ? 'block' : 'none';
+}
+function saveDraw(){
+  const juego=$('d_juego').value;
+  const sorteo=parseInt($('d_sorteo').value,10);
+  const fecha=$('d_fecha').value;
+  const raw=$('d_numeros').value.trim();
+  if(!sorteo || !fecha || !raw){ alert('Completa N° de sorteo, fecha y números.'); return; }
+  const numeros=raw.split(/[\s,]+/).map(Number).filter(n=>!isNaN(n));
+  const expected = juego==='kino' ? 14 : 6;
+  if(numeros.length!==expected){ alert(`Debes ingresar exactamente ${expected} números para ${NAMES[juego]}.`); return; }
+  const range=RANGE[juego];
+  if(numeros.some(n=> n<1 || n>range)){ alert(`Los números deben estar entre 1 y ${range}.`); return; }
+  const entry={sorteo,fecha,numeros};
+  if(juego==='loto'){
+    const com=parseInt($('d_comodin').value,10);
+    if(com && com>=1 && com<=41) entry.comodin=com;
+  }
+  DB[juego]=DB[juego].filter(d=>d.sorteo!==sorteo);
+  DB[juego].push(entry);
+  saveDB();
+  closeAddDraw();
+  if(juego==='kino'){ renderKinoTab(); }
+  else{ lotoJuegoActivo=juego; document.querySelectorAll('#segLotoJuego button').forEach(b=>b.classList.toggle('on',b.dataset.juego===juego)); renderLotoTab(); }
+  toast('Sorteo #'+sorteo+' guardado');
+  // aprendizaje continuo: reentrena el modelo de este juego con el dato nuevo
+  trainModel(juego).then(()=>{
+    const modoSel = ['loto','recargado','revancha','desquite'].includes(juego) ? $('loto_modo') : $('kino_modo');
+    if(modoSel && modoSel.value==='nn') renderNNStatus(juego);
+  });
+}
+$('drawModal').addEventListener('click',ev=>{ if(ev.target.id==='drawModal') closeAddDraw(); });
+
+/* ============================================================
+   RESPALDO
+   ============================================================ */
+$('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='loto_kino_stats_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();URL.revokeObjectURL(a.href);
+  toast('JSON exportado');
+});
+$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',ev=>{
+  const f=ev.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const data=JSON.parse(r.result);
+      let total=0;
+      ['loto','recargado','revancha','desquite','kino'].forEach(juego=>{
+        if(Array.isArray(data[juego])){
+          const ids=new Set(DB[juego].map(d=>d.sorteo));
+          data[juego].forEach(d=>{ if(!ids.has(d.sorteo)){ DB[juego].push(d); total++; } });
+        }
+      });
+      saveDB();
+      renderLotoTab(); renderKinoTab();
+      toast(total+' sorteos importados');
+      trainAllModelsQuietly();
+    }catch(e){ alert('Archivo no válido.'); }
+  };
+  r.readAsText(f);
+  ev.target.value='';
+});
+
+let toastTimer;
+function toast(msg){
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+/* ============================================================
+   SINCRONIZACIÓN REMOTA (data.json actualizado por tarea programada)
+   ============================================================ */
+async function syncRemoteData(manual){
+  if(manual) $('syncStatus').textContent='Buscando sorteos nuevos…';
+  try{
+    const res=await fetch('./data.json?t='+Date.now(),{cache:'no-store'});
+    if(!res.ok){ if(manual) $('syncStatus').textContent='No se pudo consultar data.json (¿estás abriendo el archivo localmente en vez de GitHub Pages?).'; return; }
+    const remote=await res.json();
+    const changedGames=[];
+    ['loto','recargado','revancha','desquite','kino'].forEach(juego=>{
+      if(Array.isArray(remote[juego])){
+        const ids=new Set(DB[juego].map(d=>d.sorteo));
+        let added=0;
+        remote[juego].forEach(d=>{ if(!ids.has(d.sorteo)){ DB[juego].push(d); added++; } });
+        if(added>0) changedGames.push(juego);
+      }
+    });
+    if(changedGames.length){
+      saveDB();
+      renderLotoTab(); renderKinoTab();
+      toast('Sorteos nuevos encontrados: '+changedGames.map(j=>NAMES[j]).join(', '));
+      if(manual) $('syncStatus').textContent='Actualizado: nuevos sorteos en '+changedGames.map(j=>NAMES[j]).join(', ')+'.';
+      changedGames.forEach(j=> trainModel(j).then(()=>{
+        const modoSel=['loto','recargado','revancha','desquite'].includes(j) ? $('loto_modo') : $('kino_modo');
+        if(modoSel && modoSel.value==='nn') renderNNStatus(j);
+      }));
+    }else if(manual){
+      $('syncStatus').textContent='Ya tienes los sorteos más recientes disponibles.';
+    }
+  }catch(e){
+    if(manual) $('syncStatus').textContent='No se pudo conectar (revisa tu internet).';
+  }
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderLotoTab();
+renderKinoTab();
+syncRemoteData(false);
+</script>
+</body>
+</html>
