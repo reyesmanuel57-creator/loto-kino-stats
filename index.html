@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#10161A">
-<title>Loto &amp; Kino Stats · Generador de combinaciones</title>
+<title>Estación Meteorológica Chile · Clima + Loto &amp; Kino Stats</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
   :root{
     --bg:#10161A; --surface:#1A2228; --surface2:#212B33; --border:#2A343C;
@@ -95,17 +96,54 @@
   .form-actions .btn{flex:1}
   .source{font-size:11.5px;color:var(--muted);margin-top:10px}
   .source a{color:var(--accent)}
+
+  /* ============ CLIMA ============ */
+  .wxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .wxcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;
+    transition:border-color .15s}
+  .wxcard:hover,.wxcard.sel{border-color:var(--accent)}
+  .wxcard .reg{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em}
+  .wxcard .city{font-size:14px;font-weight:700;margin:2px 0 6px}
+  .wxcard .temp{font-size:26px;font-weight:700;display:flex;align-items:center;gap:6px}
+  .wxcard .temp .ic{font-size:22px}
+  .wxcard .meta{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+  .wxupdated{font-size:12px;color:var(--muted);margin-bottom:12px;font-family:var(--mono)}
+  .wxselect{width:100%;padding:11px 12px;font-size:15px;background:var(--surface);color:var(--text);
+    border:1px solid var(--border);border-radius:10px;margin-bottom:14px;font-family:var(--sans)}
+  .wxbig{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+  .wxbig .ic{font-size:48px}
+  .wxbig .t{font-size:40px;font-weight:700}
+  .wxbig .sub{color:var(--muted);font-size:13px}
+  .wxrow2{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;margin-top:12px}
+  .wxstat{background:var(--surface2);border-radius:10px;padding:8px 10px}
+  .wxstat .lbl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .wxstat .val{font-size:15px;font-weight:700;margin-top:2px}
+  .wxtable{width:100%;border-collapse:collapse;font-size:12.5px}
+  .wxtable th,.wxtable td{padding:7px 6px;text-align:center;border-bottom:1px solid var(--border)}
+  .wxtable th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase}
+  .wxtable td.fecha{text-align:left;font-family:var(--mono);color:var(--accent)}
+  .chartwrap{position:relative;height:220px;margin-bottom:6px}
+  .chartwrap.tall{height:260px}
+  #wxMap{height:420px;border-radius:14px;border:1px solid var(--border);overflow:hidden}
+  .leaflet-popup-content-wrapper{background:var(--surface);color:var(--text);border-radius:10px}
+  .leaflet-popup-tip{background:var(--surface)}
+  .legend-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+  .wxlegend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin:8px 0 4px;flex-wrap:wrap}
 </style>
 </head>
 <body>
 
 <header>
   <div class="brand">
-    <h1>🎲 Loto &amp; Kino Stats</h1>
-    <span>Generador de combinaciones</span>
+    <h1>🌦️ Estación Meteorológica Chile</h1>
+    <span>+ Loto &amp; Kino Stats</span>
   </div>
   <div class="tabbar" id="tabbar">
-    <button class="tabbtn on" data-tab="loto">Loto</button>
+    <button class="tabbtn on" data-tab="clima">Clima</button>
+    <button class="tabbtn" data-tab="pronostico">Pronóstico</button>
+    <button class="tabbtn" data-tab="mapa">Mapa</button>
+    <button class="tabbtn" data-tab="historico">Histórico</button>
+    <button class="tabbtn" data-tab="loto">Loto</button>
     <button class="tabbtn" data-tab="kino">Kino</button>
     <button class="tabbtn" data-tab="info">Info y datos</button>
   </div>
@@ -113,8 +151,73 @@
 
 <main>
 
+<!-- ===================== TAB: CLIMA ACTUAL ===================== -->
+<section class="tab-panel active" id="tab-clima">
+  <div class="banner">
+    <strong>Estación meteorológica de Chile.</strong> Datos de las 16 capitales regionales, obtenidos de
+    <a href="https://open-meteo.com" target="_blank" rel="noopener" style="color:var(--accent)">Open-Meteo</a>
+    (fuente abierta y gratuita) y actualizados automáticamente cada 30 minutos.
+  </div>
+  <p class="wxupdated" id="wxUpdated">Cargando datos…</p>
+  <div class="wxgrid" id="wxGrid"></div>
+</section>
+
+<!-- ===================== TAB: PRONÓSTICO ===================== -->
+<section class="tab-panel" id="tab-pronostico">
+  <div class="banner">
+    Pronóstico de 7 días por región. Se muestra el pronóstico <strong>oficial</strong> (Open-Meteo) junto al
+    <strong>pronóstico propio</strong>: un modelo de tendencia (regresión lineal amortiguada) calculado sobre
+    el historial diario acumulado por este sitio — mejora a medida que se acumulan más días de datos.
+  </div>
+  <select class="wxselect" id="pronRegionSel"></select>
+  <div class="card">
+    <h3 id="pronTitle">Pronóstico — Temperaturas</h3>
+    <div class="wxlegend">
+      <span><i class="legend-dot" style="background:#17B8BE"></i>Oficial máx</span>
+      <span><i class="legend-dot" style="background:#0E6E72"></i>Oficial mín</span>
+      <span><i class="legend-dot" style="background:#E3B341"></i>Propio máx</span>
+      <span><i class="legend-dot" style="background:#F2A33C"></i>Propio mín</span>
+    </div>
+    <div class="chartwrap"><canvas id="pronChart"></canvas></div>
+    <p class="hint" id="pronConfianza"></p>
+  </div>
+  <div class="card">
+    <h3>Detalle diario (oficial)</h3>
+    <div style="overflow-x:auto">
+      <table class="wxtable" id="pronTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TAB: MAPA ===================== -->
+<section class="tab-panel" id="tab-mapa">
+  <div class="banner">
+    Mapa de las 16 regiones con la temperatura actual y capa de precipitación en vivo
+    (<a href="https://www.rainviewer.com" target="_blank" rel="noopener" style="color:var(--accent)">RainViewer</a>,
+    gratuita). Toca un marcador para ver el detalle de esa ciudad.
+  </div>
+  <div id="wxMap"></div>
+</section>
+
+<!-- ===================== TAB: HISTÓRICO ===================== -->
+<section class="tab-panel" id="tab-historico">
+  <div class="banner">
+    Histórico acumulado por esta estación desde que se activó. El gráfico diario crece un punto por día;
+    el intradiario muestra las últimas 48 horas (lecturas cada 30 min).
+  </div>
+  <select class="wxselect" id="histRegionSel"></select>
+  <div class="card">
+    <h3>Histórico diario (máx/mín)</h3>
+    <div class="chartwrap tall"><canvas id="histDiarioChart"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Últimas 48 horas</h3>
+    <div class="chartwrap tall"><canvas id="histIntradiaChart"></canvas></div>
+  </div>
+</section>
+
 <!-- ===================== TAB: LOTO (+ Recargado/Revancha/Desquite) ===================== -->
-<section class="tab-panel active" id="tab-loto">
+<section class="tab-panel" id="tab-loto">
   <div class="banner warn">
     <strong>Importante.</strong> Cada sorteo es un evento independiente: la probabilidad de cada número es
     siempre la misma (1/41), sin importar cuántas veces haya salido antes. Esta herramienta es solo para
@@ -228,6 +331,20 @@
 
 <!-- ===================== TAB: INFO Y DATOS ===================== -->
 <section class="tab-panel" id="tab-info">
+  <h2 class="stitle" style="margin-top:2px">Clima</h2>
+  <div class="banner">
+    <strong>Sobre los datos de clima.</strong> Provienen de <a href="https://open-meteo.com" target="_blank" rel="noopener" style="color:var(--accent)">Open-Meteo</a>,
+    un servicio meteorológico abierto y gratuito (no requiere cuenta). Cubren las 16 capitales regionales de Chile.
+    Una tarea programada los actualiza cada 30 minutos en <code>weather_data.json</code>.
+  </div>
+  <div class="banner warn">
+    <strong>Sobre el "pronóstico propio".</strong> Es un modelo simple de tendencia (regresión lineal amortiguada)
+    calculado sobre el historial diario que este sitio va acumulando — no es un modelo meteorológico físico como el
+    de Open-Meteo, así que se recomienda guiarse por el pronóstico oficial. Necesita al menos 3 días de historial
+    acumulado para activarse, y su confianza aumenta con más días de datos.
+  </div>
+
+  <h2 class="stitle">Loto y Kino</h2>
   <div class="banner">
     <strong>Cómo funciona.</strong> Esta app calcula frecuencia (calientes/fríos) sobre los sorteos cargados
     y genera combinaciones aleatorias o ponderadas según esa frecuencia. Es una herramienta estadística
@@ -311,9 +428,208 @@
 <div class="toast" id="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
+
+/* ============================================================
+   CLIMA — estación meteorológica (weather_data.json)
+   ============================================================ */
+const WX_ICONS={
+  0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',
+  51:'🌦️',53:'🌦️',55:'🌦️',56:'🌧️',57:'🌧️',
+  61:'🌧️',63:'🌧️',65:'🌧️',66:'🌧️',67:'🌧️',
+  71:'🌨️',73:'🌨️',75:'❄️',77:'❄️',
+  80:'🌦️',81:'🌧️',82:'⛈️',85:'🌨️',86:'❄️',
+  95:'⛈️',96:'⛈️',99:'⛈️'
+};
+function wxIcon(code){ return WX_ICONS[code] || '🌡️'; }
+function wxDesc(code){
+  const d={0:'Despejado',1:'Mayormente despejado',2:'Parcialmente nublado',3:'Nublado',
+    45:'Niebla',48:'Niebla escarchada',51:'Llovizna débil',53:'Llovizna',55:'Llovizna intensa',
+    56:'Llovizna helada',57:'Llovizna helada intensa',61:'Lluvia débil',63:'Lluvia',65:'Lluvia intensa',
+    66:'Lluvia helada',67:'Lluvia helada intensa',71:'Nieve débil',73:'Nieve',75:'Nieve intensa',
+    77:'Granizo fino',80:'Chubascos débiles',81:'Chubascos',82:'Chubascos intensos',
+    85:'Chubascos de nieve',86:'Chubascos de nieve intensos',95:'Tormenta eléctrica',
+    96:'Tormenta con granizo',99:'Tormenta con granizo fuerte'};
+  return d[code]||'—';
+}
+function fmtHora(iso){ if(!iso) return '—'; return iso.slice(11,16); }
+function fmtFechaCorta(iso){
+  if(!iso) return '—';
+  const d=new Date(iso+'T12:00:00');
+  return d.toLocaleDateString('es-CL',{weekday:'short',day:'2-digit',month:'2-digit'});
+}
+
+let WX=null;
+let wxMapInstance=null, wxMapMarkers={};
+let pronChartInstance=null, histDiarioChartInstance=null, histIntradiaChartInstance=null;
+let pronRegionActiva='santiago', histRegionActiva='santiago';
+
+async function loadWeather(){
+  try{
+    const res=await fetch('./weather_data.json?t='+Date.now(),{cache:'no-store'});
+    if(!res.ok){ $('wxUpdated').textContent='No se pudo cargar weather_data.json.'; return; }
+    WX=await res.json();
+    renderWxUpdated();
+    renderWxGrid();
+    populateRegionSelects();
+    renderPronostico();
+    renderHistorico();
+    initOrUpdateMap();
+  }catch(e){
+    $('wxUpdated').textContent='No se pudo conectar para obtener el clima.';
+  }
+}
+
+function renderWxUpdated(){
+  if(!WX) return;
+  $('wxUpdated').textContent='Última actualización: '+(WX._ultima_actualizacion||'—')+' (hora Chile continental)';
+}
+
+function renderWxGrid(){
+  if(!WX) return;
+  const html=WX.regiones.map(r=>{
+    const a=WX.actual[r.id]||{};
+    return `<div class="wxcard" data-id="${r.id}">
+      <div class="reg">${r.region}</div>
+      <div class="city">${r.ciudad}</div>
+      <div class="temp"><span class="ic">${wxIcon(a.weather_code)}</span>${a.temperatura!=null?a.temperatura.toFixed(1)+'°':'—'}</div>
+      <div class="meta">
+        ${wxDesc(a.weather_code)}<br>
+        Sensación ${a.sensacion!=null?a.sensacion.toFixed(1)+'°':'—'} · Humedad ${a.humedad??'—'}%<br>
+        Viento ${a.viento_vel??'—'} km/h
+      </div>
+    </div>`;
+  }).join('');
+  $('wxGrid').innerHTML=html;
+  $('wxGrid').querySelectorAll('.wxcard').forEach(card=>{
+    card.addEventListener('click',()=>{
+      pronRegionActiva=card.dataset.id; histRegionActiva=card.dataset.id;
+      $('pronRegionSel').value=pronRegionActiva; $('histRegionSel').value=histRegionActiva;
+      renderPronostico(); renderHistorico();
+      document.querySelector('#tabbar [data-tab="pronostico"]').click();
+    });
+  });
+}
+
+function populateRegionSelects(){
+  if(!WX) return;
+  const opts=WX.regiones.map(r=>`<option value="${r.id}">${r.ciudad} — ${r.region}</option>`).join('');
+  $('pronRegionSel').innerHTML=opts;
+  $('histRegionSel').innerHTML=opts;
+  $('pronRegionSel').value=pronRegionActiva;
+  $('histRegionSel').value=histRegionActiva;
+}
+
+function renderPronostico(){
+  if(!WX) return;
+  const rid=pronRegionActiva;
+  const reg=WX.regiones.find(r=>r.id===rid);
+  const oficial=WX.pronostico_oficial[rid]||[];
+  const propioObj=WX.pronostico_propio[rid]||{estado:'acumulando_datos',pronostico:[]};
+  $('pronTitle').textContent='Pronóstico 7 días — '+(reg?reg.ciudad:rid);
+
+  const labels=oficial.map(d=>fmtFechaCorta(d.fecha));
+  const oficMax=oficial.map(d=>d.tmax);
+  const oficMin=oficial.map(d=>d.tmin);
+  const propioMap={}; (propioObj.pronostico||[]).forEach(p=>propioMap[p.fecha]=p);
+  const propioMax=oficial.map(d=> propioMap[d.fecha]? propioMap[d.fecha].tmax : null);
+  const propioMin=oficial.map(d=> propioMap[d.fecha]? propioMap[d.fecha].tmin : null);
+
+  if(pronChartInstance) pronChartInstance.destroy();
+  const ctx=$('pronChart').getContext('2d');
+  pronChartInstance=new Chart(ctx,{
+    type:'line',
+    data:{labels,datasets:[
+      {label:'Oficial máx',data:oficMax,borderColor:'#17B8BE',backgroundColor:'transparent',tension:.3},
+      {label:'Oficial mín',data:oficMin,borderColor:'#0E6E72',backgroundColor:'transparent',tension:.3},
+      {label:'Propio máx',data:propioMax,borderColor:'#E3B341',backgroundColor:'transparent',borderDash:[5,3],tension:.3},
+      {label:'Propio mín',data:propioMin,borderColor:'#F2A33C',backgroundColor:'transparent',borderDash:[5,3],tension:.3},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}},y:{ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}}}}
+  });
+
+  if(propioObj.estado==='acumulando_datos'){
+    $('pronConfianza').textContent=`Pronóstico propio acumulando datos (${propioObj.dias_historicos||0}/${propioObj.dias_necesarios||3} días mínimos) — mientras tanto no se muestra.`;
+  }else{
+    $('pronConfianza').textContent=`Pronóstico propio activo — ${propioObj.dias_historicos} días de historial usados, confianza: ${propioObj.confianza}.`;
+  }
+
+  $('pronTable').innerHTML=`<tr><th>Fecha</th><th>Máx</th><th>Mín</th><th>Prob. lluvia</th><th>Lluvia (mm)</th><th>Viento máx</th></tr>`+
+    oficial.map(d=>`<tr><td class="fecha">${fmtFechaCorta(d.fecha)}</td><td>${d.tmax}°</td><td>${d.tmin}°</td><td>${d.precip_prob??'—'}%</td><td>${d.precip_sum??'—'}mm</td><td>${d.viento_max??'—'} km/h</td></tr>`).join('');
+}
+
+function renderHistorico(){
+  if(!WX) return;
+  const rid=histRegionActiva;
+  const diario=(WX.historico_diario[rid]||[]).slice().sort((a,b)=>a.fecha.localeCompare(b.fecha));
+  const intradia=(WX.historico_intradia[rid]||[]).slice().sort((a,b)=>a.time.localeCompare(b.time));
+
+  if(histDiarioChartInstance) histDiarioChartInstance.destroy();
+  histDiarioChartInstance=new Chart($('histDiarioChart').getContext('2d'),{
+    type:'line',
+    data:{labels:diario.map(d=>d.fecha.slice(5)),datasets:[
+      {label:'Máx',data:diario.map(d=>d.tmax),borderColor:'#17B8BE',backgroundColor:'transparent',tension:.3},
+      {label:'Mín',data:diario.map(d=>d.tmin),borderColor:'#F2A33C',backgroundColor:'transparent',tension:.3},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#E8EDEF'}}},
+      scales:{x:{ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}},y:{ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}}}}
+  });
+
+  if(histIntradiaChartInstance) histIntradiaChartInstance.destroy();
+  histIntradiaChartInstance=new Chart($('histIntradiaChart').getContext('2d'),{
+    type:'line',
+    data:{labels:intradia.map(d=>fmtHora(d.time)),datasets:[
+      {label:'Temperatura °C',data:intradia.map(d=>d.temperatura),borderColor:'#17B8BE',backgroundColor:'transparent',tension:.3,yAxisID:'y'},
+      {label:'Humedad %',data:intradia.map(d=>d.humedad),borderColor:'#8FA0A8',backgroundColor:'transparent',tension:.3,yAxisID:'y1'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#E8EDEF'}}},
+      scales:{
+        x:{ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}},
+        y:{position:'left',ticks:{color:'#8FA0A8'},grid:{color:'#2A343C'}},
+        y1:{position:'right',ticks:{color:'#8FA0A8'},grid:{display:false}}
+      }}
+  });
+}
+
+function initOrUpdateMap(){
+  if(!WX) return;
+  if(!wxMapInstance){
+    wxMapInstance=L.map('wxMap',{scrollWheelZoom:false}).setView([-35.5,-71.5],4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'&copy; OpenStreetMap contributors',maxZoom:12
+    }).addTo(wxMapInstance);
+    fetch('https://api.rainviewer.com/public/weather-maps.json').then(r=>r.json()).then(rv=>{
+      if(rv.radar && rv.radar.past && rv.radar.past.length){
+        const last=rv.radar.past[rv.radar.past.length-1];
+        L.tileLayer(`https://tilecache.rainviewer.com${last.path}/256/{z}/{x}/{y}/2/1_1.png`,{
+          opacity:.5,maxZoom:12
+        }).addTo(wxMapInstance);
+      }
+    }).catch(()=>{});
+  }
+  WX.regiones.forEach(r=>{
+    const a=WX.actual[r.id]||{};
+    const popup=`<strong>${r.ciudad}</strong><br>${wxIcon(a.weather_code)} ${a.temperatura!=null?a.temperatura.toFixed(1)+'°C':'—'} · ${wxDesc(a.weather_code)}<br>Humedad ${a.humedad??'—'}% · Viento ${a.viento_vel??'—'} km/h`;
+    if(wxMapMarkers[r.id]){
+      wxMapMarkers[r.id].setPopupContent(popup);
+    }else{
+      wxMapMarkers[r.id]=L.marker([r.lat,r.lon]).addTo(wxMapInstance).bindPopup(popup);
+    }
+  });
+}
+
+$('pronRegionSel').addEventListener('change',()=>{ pronRegionActiva=$('pronRegionSel').value; renderPronostico(); });
+$('histRegionSel').addEventListener('change',()=>{ histRegionActiva=$('histRegionSel').value; renderHistorico(); });
+
+setInterval(loadWeather, 5*60*1000); // refresco en el navegador cada 5 min (los datos en el server cambian cada 30 min)
+
 
 /* ============================================================
    RANGOS POR JUEGO
@@ -718,6 +1034,7 @@ $('tabbar').addEventListener('click',ev=>{
   const tab=b.dataset.tab;
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   $('tab-'+tab).classList.add('active');
+  if(tab==='mapa' && wxMapInstance){ setTimeout(()=>wxMapInstance.invalidateSize(),80); }
 });
 $('segLotoJuego').addEventListener('click',ev=>{
   const b=ev.target.closest('button'); if(!b) return;
@@ -853,6 +1170,7 @@ async function syncRemoteData(manual){
 renderLotoTab();
 renderKinoTab();
 syncRemoteData(false);
+loadWeather();
 </script>
 </body>
 </html>
