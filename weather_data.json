@@ -1,6 +1,6 @@
 {
   "_info": "Estacion meteorologica Chile (16 capitales regionales). Datos de Open-Meteo (open-meteo.com, no oficial), actualizado cada 30 min. Incluye pronostico oficial y un modelo propio (regresion lineal amortiguada sobre el historico acumulado).",
-  "_ultima_actualizacion": "2026-07-21T02:34:58-04:00",
+  "_ultima_actualizacion": "2026-07-21T03:05:01-04:00",
   "regiones": [
     {
       "id": "arica",
@@ -117,243 +117,243 @@
   ],
   "actual": {
     "arica": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 15.4,
-      "humedad": 89,
-      "sensacion": 16.4,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 1014.1,
-      "viento_vel": 1.1,
-      "viento_dir": 351,
-      "rafagas": 3.6,
-      "nubosidad": 0,
-      "es_dia": 0
-    },
-    "iquique": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 16.0,
-      "humedad": 83,
-      "sensacion": 16.4,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 1014.7,
-      "viento_vel": 4.1,
-      "viento_dir": 157,
-      "rafagas": 12.2,
-      "nubosidad": 0,
-      "es_dia": 0
-    },
-    "antofagasta": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 16.4,
-      "humedad": 98,
-      "sensacion": 18.1,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 2,
-      "presion": 1014.7,
-      "viento_vel": 2.6,
-      "viento_dir": 245,
-      "rafagas": 9.4,
-      "nubosidad": 51,
-      "es_dia": 0
-    },
-    "copiapo": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 12.6,
-      "humedad": 98,
-      "sensacion": 13.2,
+      "time": "2026-07-21T03:00",
+      "temperatura": 15.5,
+      "humedad": 87,
+      "sensacion": 16.6,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 1,
-      "presion": 969.3,
-      "viento_vel": 0.2,
-      "viento_dir": 180,
-      "rafagas": 9.4,
-      "nubosidad": 23,
+      "presion": 1013.7,
+      "viento_vel": 0.3,
+      "viento_dir": 45,
+      "rafagas": 2.2,
+      "nubosidad": 24,
+      "es_dia": 0
+    },
+    "iquique": {
+      "time": "2026-07-21T03:00",
+      "temperatura": 15.4,
+      "humedad": 84,
+      "sensacion": 15.7,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 1,
+      "presion": 1014.2,
+      "viento_vel": 3.2,
+      "viento_dir": 153,
+      "rafagas": 7.2,
+      "nubosidad": 22,
+      "es_dia": 0
+    },
+    "antofagasta": {
+      "time": "2026-07-21T03:00",
+      "temperatura": 15.9,
+      "humedad": 93,
+      "sensacion": 17.1,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 1,
+      "presion": 1014.6,
+      "viento_vel": 2.7,
+      "viento_dir": 217,
+      "rafagas": 6.5,
+      "nubosidad": 34,
+      "es_dia": 0
+    },
+    "copiapo": {
+      "time": "2026-07-21T03:00",
+      "temperatura": 12.8,
+      "humedad": 98,
+      "sensacion": 13.3,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 1,
+      "presion": 970.4,
+      "viento_vel": 2.0,
+      "viento_dir": 153,
+      "rafagas": 10.1,
+      "nubosidad": 48,
       "es_dia": 0
     },
     "laserena": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 10.6,
-      "humedad": 88,
-      "sensacion": 9.7,
-      "precipitacion": 0.6,
+      "time": "2026-07-21T03:00",
+      "temperatura": 11.1,
+      "humedad": 85,
+      "sensacion": 10.2,
+      "precipitacion": 0.0,
       "lluvia": 0.0,
-      "weather_code": 80,
+      "weather_code": 3,
       "presion": 1009.5,
-      "viento_vel": 3.7,
-      "viento_dir": 119,
-      "rafagas": 16.2,
-      "nubosidad": 98,
+      "viento_vel": 3.5,
+      "viento_dir": 99,
+      "rafagas": 12.2,
+      "nubosidad": 100,
       "es_dia": 0
     },
     "valparaiso": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 10.9,
-      "humedad": 88,
-      "sensacion": 8.2,
-      "precipitacion": 0.5,
-      "lluvia": 0.2,
+      "time": "2026-07-21T03:00",
+      "temperatura": 11.2,
+      "humedad": 91,
+      "sensacion": 7.9,
+      "precipitacion": 0.6,
+      "lluvia": 0.1,
       "weather_code": 80,
-      "presion": 1009.5,
-      "viento_vel": 16.6,
-      "viento_dir": 64,
-      "rafagas": 47.5,
+      "presion": 1009.3,
+      "viento_vel": 22.2,
+      "viento_dir": 34,
+      "rafagas": 51.8,
       "nubosidad": 100,
       "es_dia": 0
     },
     "santiago": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 6.8,
+      "time": "2026-07-21T03:00",
+      "temperatura": 7.7,
       "humedad": 92,
-      "sensacion": 5.4,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 3,
-      "presion": 948.0,
-      "viento_vel": 2.3,
-      "viento_dir": 61,
-      "rafagas": 9.0,
-      "nubosidad": 99,
+      "sensacion": 6.1,
+      "precipitacion": 0.1,
+      "lluvia": 0.1,
+      "weather_code": 51,
+      "presion": 947.2,
+      "viento_vel": 4.7,
+      "viento_dir": 83,
+      "rafagas": 11.5,
+      "nubosidad": 100,
       "es_dia": 0
     },
     "rancagua": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 6.0,
+      "time": "2026-07-21T03:00",
+      "temperatura": 6.6,
       "humedad": 93,
-      "sensacion": 3.4,
-      "precipitacion": 0.6,
-      "lluvia": 0.2,
+      "sensacion": 4.9,
+      "precipitacion": 0.4,
+      "lluvia": 0.3,
       "weather_code": 80,
-      "presion": 952.5,
-      "viento_vel": 9.3,
-      "viento_dir": 77,
-      "rafagas": 19.4,
+      "presion": 951.9,
+      "viento_vel": 4.3,
+      "viento_dir": 45,
+      "rafagas": 11.5,
       "nubosidad": 100,
       "es_dia": 0
     },
     "talca": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 8.8,
+      "time": "2026-07-21T03:00",
+      "temperatura": 9.0,
       "humedad": 95,
       "sensacion": 7.5,
-      "precipitacion": 0.1,
-      "lluvia": 0.1,
-      "weather_code": 51,
-      "presion": 999.1,
-      "viento_vel": 5.1,
-      "viento_dir": 39,
-      "rafagas": 17.6,
+      "precipitacion": 0.3,
+      "lluvia": 0.3,
+      "weather_code": 55,
+      "presion": 999.2,
+      "viento_vel": 6.8,
+      "viento_dir": 87,
+      "rafagas": 18.0,
       "nubosidad": 100,
       "es_dia": 0
     },
     "chillan": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 8.0,
-      "humedad": 71,
-      "sensacion": 4.9,
+      "time": "2026-07-21T03:00",
+      "temperatura": 6.9,
+      "humedad": 80,
+      "sensacion": 4.4,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 996.6,
-      "viento_vel": 9.7,
-      "viento_dir": 55,
-      "rafagas": 15.8,
+      "presion": 996.7,
+      "viento_vel": 7.1,
+      "viento_dir": 49,
+      "rafagas": 13.7,
       "nubosidad": 100,
       "es_dia": 0
     },
     "concepcion": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 7.2,
+      "time": "2026-07-21T03:00",
+      "temperatura": 6.8,
       "humedad": 87,
-      "sensacion": 3.7,
+      "sensacion": 3.3,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1008.5,
-      "viento_vel": 15.8,
-      "viento_dir": 116,
-      "rafagas": 33.1,
+      "presion": 1008.8,
+      "viento_vel": 15.1,
+      "viento_dir": 112,
+      "rafagas": 32.4,
       "nubosidad": 100,
       "es_dia": 0
     },
     "temuco": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 3.0,
-      "humedad": 90,
-      "sensacion": 0.9,
+      "time": "2026-07-21T03:00",
+      "temperatura": 2.2,
+      "humedad": 92,
+      "sensacion": -0.1,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 998.7,
-      "viento_vel": 1.4,
-      "viento_dir": 293,
-      "rafagas": 5.0,
-      "nubosidad": 92,
+      "presion": 998.6,
+      "viento_vel": 1.9,
+      "viento_dir": 326,
+      "rafagas": 4.7,
+      "nubosidad": 98,
       "es_dia": 0
     },
     "valdivia": {
-      "time": "2026-07-21T02:30",
-      "temperatura": 0.9,
-      "humedad": 98,
-      "sensacion": -1.9,
+      "time": "2026-07-21T03:00",
+      "temperatura": 0.7,
+      "humedad": 95,
+      "sensacion": -2.2,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 0,
-      "presion": 1012.2,
-      "viento_vel": 5.0,
-      "viento_dir": 145,
+      "presion": 1011.9,
+      "viento_vel": 5.2,
+      "viento_dir": 149,
       "rafagas": 12.6,
-      "nubosidad": 1,
-      "es_dia": 0
-    },
-    "puertomontt": {
-      "time": "2026-07-21T02:30",
-      "temperatura": -0.3,
-      "humedad": 94,
-      "sensacion": -2.9,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 1014.2,
-      "viento_vel": 2.6,
-      "viento_dir": 344,
-      "rafagas": 4.7,
-      "nubosidad": 19,
-      "es_dia": 0
-    },
-    "coyhaique": {
-      "time": "2026-07-21T02:30",
-      "temperatura": -8.5,
-      "humedad": 76,
-      "sensacion": -11.9,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 984.2,
-      "viento_vel": 0.6,
-      "viento_dir": 18,
-      "rafagas": 10.4,
       "nubosidad": 2,
       "es_dia": 0
     },
+    "puertomontt": {
+      "time": "2026-07-21T03:00",
+      "temperatura": -1.6,
+      "humedad": 96,
+      "sensacion": -4.5,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 2,
+      "presion": 1013.7,
+      "viento_vel": 2.8,
+      "viento_dir": 325,
+      "rafagas": 10.1,
+      "nubosidad": 69,
+      "es_dia": 0
+    },
+    "coyhaique": {
+      "time": "2026-07-21T03:00",
+      "temperatura": -8.5,
+      "humedad": 75,
+      "sensacion": -12.0,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 0,
+      "presion": 983.8,
+      "viento_vel": 0.4,
+      "viento_dir": 27,
+      "rafagas": 9.0,
+      "nubosidad": 5,
+      "es_dia": 0
+    },
     "puntaarenas": {
-      "time": "2026-07-21T02:30",
-      "temperatura": -0.4,
+      "time": "2026-07-21T03:00",
+      "temperatura": -0.5,
       "humedad": 84,
       "sensacion": -5.3,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 1,
-      "presion": 1015.3,
-      "viento_vel": 16.6,
-      "viento_dir": 269,
-      "rafagas": 32.4,
-      "nubosidad": 26,
+      "presion": 1015.1,
+      "viento_vel": 15.7,
+      "viento_dir": 275,
+      "rafagas": 29.5,
+      "nubosidad": 38,
       "es_dia": 0
     }
   },
@@ -361,30 +361,30 @@
     "arica": [
       {
         "fecha": "2026-07-21",
-        "tmax": 21.2,
+        "tmax": 21.1,
         "tmin": 14.9,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 14.6,
+        "viento_max": 15.3,
         "weather_code": 3,
         "amanecer": "2026-07-21T07:12",
         "atardecer": "2026-07-21T18:22"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 21.1,
-        "tmin": 15.6,
+        "tmax": 20.9,
+        "tmin": 15.0,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 12.3,
+        "viento_max": 12.0,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:11",
         "atardecer": "2026-07-22T18:23"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 20.2,
-        "tmin": 15.5,
+        "tmax": 20.3,
+        "tmin": 14.5,
         "precip_sum": 0.1,
         "precip_prob": 0,
         "viento_max": 12.4,
@@ -394,11 +394,11 @@
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 20.8,
-        "tmin": 15.1,
+        "tmax": 20.6,
+        "tmin": 15.0,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 11.8,
+        "viento_max": 10.4,
         "weather_code": 3,
         "amanecer": "2026-07-24T07:11",
         "atardecer": "2026-07-24T18:23"
@@ -406,21 +406,21 @@
       {
         "fecha": "2026-07-25",
         "tmax": 20.7,
-        "tmin": 15.3,
+        "tmin": 15.5,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 11.6,
+        "viento_max": 11.4,
         "weather_code": 3,
         "amanecer": "2026-07-25T07:11",
         "atardecer": "2026-07-25T18:24"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 20.8,
-        "tmin": 15.3,
+        "tmax": 20.5,
+        "tmin": 14.5,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 10.6,
+        "viento_max": 11.6,
         "weather_code": 3,
         "amanecer": "2026-07-26T07:10",
         "atardecer": "2026-07-26T18:24"
@@ -428,10 +428,10 @@
       {
         "fecha": "2026-07-27",
         "tmax": 20.6,
-        "tmin": 15.6,
+        "tmin": 15.2,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 11.0,
+        "viento_max": 9.2,
         "weather_code": 3,
         "amanecer": "2026-07-27T07:10",
         "atardecer": "2026-07-27T18:24"
@@ -440,22 +440,22 @@
     "iquique": [
       {
         "fecha": "2026-07-21",
-        "tmax": 21.1,
-        "tmin": 13.8,
+        "tmax": 21.0,
+        "tmin": 13.9,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 13.4,
-        "weather_code": 0,
+        "viento_max": 14.8,
+        "weather_code": 1,
         "amanecer": "2026-07-21T07:14",
         "atardecer": "2026-07-21T18:19"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 21.1,
+        "tmax": 21.5,
         "tmin": 15.2,
         "precip_sum": 0.0,
         "precip_prob": 2,
-        "viento_max": 9.8,
+        "viento_max": 9.1,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:14",
         "atardecer": "2026-07-22T18:19"
@@ -463,43 +463,43 @@
       {
         "fecha": "2026-07-23",
         "tmax": 20.9,
-        "tmin": 15.9,
+        "tmin": 16.0,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 8.6,
+        "viento_max": 8.9,
         "weather_code": 3,
         "amanecer": "2026-07-23T07:14",
         "atardecer": "2026-07-23T18:20"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 20.1,
+        "tmax": 20.5,
         "tmin": 15.1,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 6.3,
+        "viento_max": 6.6,
         "weather_code": 3,
         "amanecer": "2026-07-24T07:13",
         "atardecer": "2026-07-24T18:20"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 20.4,
-        "tmin": 16.1,
+        "tmax": 20.0,
+        "tmin": 15.3,
         "precip_sum": 0.0,
         "precip_prob": 2,
-        "viento_max": 8.5,
+        "viento_max": 9.6,
         "weather_code": 3,
         "amanecer": "2026-07-25T07:13",
         "atardecer": "2026-07-25T18:20"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 21.0,
-        "tmin": 15.5,
+        "tmax": 20.4,
+        "tmin": 15.6,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 7.4,
+        "viento_max": 8.7,
         "weather_code": 3,
         "amanecer": "2026-07-26T07:12",
         "atardecer": "2026-07-26T18:21"
@@ -507,10 +507,10 @@
       {
         "fecha": "2026-07-27",
         "tmax": 20.8,
-        "tmin": 16.1,
+        "tmin": 15.5,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 8.6,
+        "viento_max": 9.7,
         "weather_code": 3,
         "amanecer": "2026-07-27T07:12",
         "atardecer": "2026-07-27T18:21"
@@ -519,66 +519,66 @@
     "antofagasta": [
       {
         "fecha": "2026-07-21",
-        "tmax": 20.0,
-        "tmin": 15.5,
+        "tmax": 20.1,
+        "tmin": 15.1,
         "precip_sum": 0.0,
         "precip_prob": 9,
-        "viento_max": 14.9,
+        "viento_max": 14.2,
         "weather_code": 3,
         "amanecer": "2026-07-21T07:21",
         "atardecer": "2026-07-21T18:14"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 20.9,
+        "tmax": 21.7,
         "tmin": 14.6,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 12.9,
-        "weather_code": 1,
+        "viento_max": 12.4,
+        "weather_code": 2,
         "amanecer": "2026-07-22T07:21",
         "atardecer": "2026-07-22T18:14"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 22.0,
-        "tmin": 15.3,
+        "tmax": 22.2,
+        "tmin": 15.6,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 10.5,
-        "weather_code": 3,
+        "viento_max": 11.1,
+        "weather_code": 1,
         "amanecer": "2026-07-23T07:21",
         "atardecer": "2026-07-23T18:15"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 19.4,
-        "tmin": 15.7,
+        "tmax": 20.2,
+        "tmin": 15.9,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 9.4,
+        "viento_max": 8.5,
         "weather_code": 2,
         "amanecer": "2026-07-24T07:20",
         "atardecer": "2026-07-24T18:15"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 19.4,
-        "tmin": 14.9,
+        "tmax": 19.0,
+        "tmin": 13.6,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 7.4,
+        "viento_max": 8.4,
         "weather_code": 3,
         "amanecer": "2026-07-25T07:20",
         "atardecer": "2026-07-25T18:16"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 20.1,
-        "tmin": 15.2,
+        "tmax": 20.2,
+        "tmin": 15.4,
         "precip_sum": 0.0,
         "precip_prob": 2,
-        "viento_max": 11.3,
+        "viento_max": 11.9,
         "weather_code": 3,
         "amanecer": "2026-07-26T07:19",
         "atardecer": "2026-07-26T18:16"
@@ -586,10 +586,10 @@
       {
         "fecha": "2026-07-27",
         "tmax": 19.1,
-        "tmin": 15.0,
+        "tmin": 15.6,
         "precip_sum": 0.0,
         "precip_prob": 2,
-        "viento_max": 10.0,
+        "viento_max": 12.1,
         "weather_code": 3,
         "amanecer": "2026-07-27T07:19",
         "atardecer": "2026-07-27T18:17"
@@ -598,63 +598,63 @@
     "copiapo": [
       {
         "fecha": "2026-07-21",
-        "tmax": 17.2,
+        "tmax": 16.9,
         "tmin": 10.9,
-        "precip_sum": 2.1,
+        "precip_sum": 2.7,
         "precip_prob": 79,
-        "viento_max": 11.6,
-        "weather_code": 51,
+        "viento_max": 11.2,
+        "weather_code": 53,
         "amanecer": "2026-07-21T07:27",
         "atardecer": "2026-07-21T18:07"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 19.9,
-        "tmin": 10.0,
+        "tmax": 19.4,
+        "tmin": 9.9,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 6.3,
+        "viento_max": 5.8,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:27",
         "atardecer": "2026-07-22T18:07"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 22.0,
-        "tmin": 12.5,
+        "tmax": 21.5,
+        "tmin": 12.1,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 4.9,
+        "viento_max": 5.9,
         "weather_code": 3,
         "amanecer": "2026-07-23T07:27",
         "atardecer": "2026-07-23T18:08"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 27.5,
-        "tmin": 13.8,
+        "tmax": 27.6,
+        "tmin": 13.7,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 5.8,
+        "viento_max": 7.8,
         "weather_code": 2,
         "amanecer": "2026-07-24T07:26",
         "atardecer": "2026-07-24T18:08"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 28.5,
-        "tmin": 14.1,
+        "tmax": 27.9,
+        "tmin": 14.6,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 8.8,
+        "viento_max": 7.4,
         "weather_code": 0,
         "amanecer": "2026-07-25T07:26",
         "atardecer": "2026-07-25T18:09"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 23.3,
-        "tmin": 13.6,
+        "tmax": 22.3,
+        "tmin": 13.8,
         "precip_sum": 0.0,
         "precip_prob": 0,
         "viento_max": 9.2,
@@ -664,11 +664,11 @@
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 19.6,
-        "tmin": 13.5,
+        "tmax": 20.3,
+        "tmin": 12.7,
         "precip_sum": 0.0,
         "precip_prob": 1,
-        "viento_max": 10.2,
+        "viento_max": 13.6,
         "weather_code": 3,
         "amanecer": "2026-07-27T07:24",
         "atardecer": "2026-07-27T18:10"
@@ -677,77 +677,77 @@
     "laserena": [
       {
         "fecha": "2026-07-21",
-        "tmax": 16.6,
-        "tmin": 9.7,
-        "precip_sum": 26.9,
+        "tmax": 15.8,
+        "tmin": 9.0,
+        "precip_sum": 26.4,
         "precip_prob": 100,
-        "viento_max": 12.7,
+        "viento_max": 17.0,
         "weather_code": 95,
         "amanecer": "2026-07-21T07:36",
         "atardecer": "2026-07-21T18:06"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 16.9,
-        "tmin": 7.1,
+        "tmax": 16.3,
+        "tmin": 6.7,
         "precip_sum": 0.0,
         "precip_prob": 4,
-        "viento_max": 8.6,
+        "viento_max": 8.3,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:36",
         "atardecer": "2026-07-22T18:06"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 14.4,
-        "tmin": 10.0,
-        "precip_sum": 0.0,
+        "tmax": 16.8,
+        "tmin": 9.7,
+        "precip_sum": 1.5,
         "precip_prob": 10,
-        "viento_max": 6.7,
-        "weather_code": 3,
+        "viento_max": 6.9,
+        "weather_code": 80,
         "amanecer": "2026-07-23T07:35",
         "atardecer": "2026-07-23T18:07"
       },
       {
         "fecha": "2026-07-24",
         "tmax": 18.7,
-        "tmin": 10.2,
+        "tmin": 9.8,
         "precip_sum": 0.0,
         "precip_prob": 6,
-        "viento_max": 7.2,
+        "viento_max": 8.9,
         "weather_code": 3,
         "amanecer": "2026-07-24T07:35",
         "atardecer": "2026-07-24T18:07"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 20.2,
-        "tmin": 12.2,
+        "tmax": 19.6,
+        "tmin": 12.0,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 6.8,
+        "viento_max": 6.6,
         "weather_code": 3,
         "amanecer": "2026-07-25T07:34",
         "atardecer": "2026-07-25T18:08"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 17.3,
-        "tmin": 12.1,
+        "tmax": 17.1,
+        "tmin": 12.2,
         "precip_sum": 0.0,
         "precip_prob": 1,
-        "viento_max": 7.6,
+        "viento_max": 7.0,
         "weather_code": 3,
         "amanecer": "2026-07-26T07:33",
         "atardecer": "2026-07-26T18:09"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 18.2,
+        "tmax": 16.6,
         "tmin": 11.3,
         "precip_sum": 0.0,
         "precip_prob": 7,
-        "viento_max": 8.8,
+        "viento_max": 6.5,
         "weather_code": 3,
         "amanecer": "2026-07-27T07:33",
         "atardecer": "2026-07-27T18:09"
@@ -756,78 +756,78 @@
     "valparaiso": [
       {
         "fecha": "2026-07-21",
-        "tmax": 13.9,
-        "tmin": 10.8,
+        "tmax": 13.1,
+        "tmin": 11.2,
         "precip_sum": 37.9,
         "precip_prob": 100,
-        "viento_max": 40.1,
+        "viento_max": 37.2,
         "weather_code": 95,
         "amanecer": "2026-07-21T07:44",
         "atardecer": "2026-07-21T18:01"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 16.9,
-        "tmin": 11.3,
+        "tmax": 16.4,
+        "tmin": 11.7,
         "precip_sum": 0.0,
         "precip_prob": 39,
-        "viento_max": 22.7,
+        "viento_max": 18.8,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:44",
         "atardecer": "2026-07-22T18:02"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 15.0,
-        "tmin": 11.5,
-        "precip_sum": 3.9,
+        "tmax": 14.3,
+        "tmin": 10.7,
+        "precip_sum": 14.7,
         "precip_prob": 85,
-        "viento_max": 17.6,
-        "weather_code": 80,
+        "viento_max": 17.5,
+        "weather_code": 81,
         "amanecer": "2026-07-23T07:43",
         "atardecer": "2026-07-23T18:02"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 19.2,
-        "tmin": 11.1,
+        "tmax": 19.0,
+        "tmin": 9.6,
         "precip_sum": 0.0,
         "precip_prob": 26,
-        "viento_max": 12.3,
+        "viento_max": 13.9,
         "weather_code": 3,
         "amanecer": "2026-07-24T07:42",
         "atardecer": "2026-07-24T18:03"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 19.5,
-        "tmin": 11.6,
+        "tmax": 17.8,
+        "tmin": 9.3,
         "precip_sum": 0.0,
         "precip_prob": 10,
-        "viento_max": 11.3,
+        "viento_max": 12.0,
         "weather_code": 3,
         "amanecer": "2026-07-25T07:42",
         "atardecer": "2026-07-25T18:03"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 16.6,
-        "tmin": 12.7,
-        "precip_sum": 1.2,
+        "tmax": 16.8,
+        "tmin": 12.2,
+        "precip_sum": 0.6,
         "precip_prob": 30,
-        "viento_max": 8.1,
+        "viento_max": 6.6,
         "weather_code": 51,
         "amanecer": "2026-07-26T07:41",
         "atardecer": "2026-07-26T18:04"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 16.2,
-        "tmin": 12.1,
-        "precip_sum": 23.7,
+        "tmax": 16.4,
+        "tmin": 12.5,
+        "precip_sum": 5.1,
         "precip_prob": 65,
-        "viento_max": 12.9,
-        "weather_code": 80,
+        "viento_max": 11.2,
+        "weather_code": 53,
         "amanecer": "2026-07-27T07:40",
         "atardecer": "2026-07-27T18:05"
       }
@@ -835,78 +835,78 @@
     "santiago": [
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
-        "tmin": 5.9,
-        "precip_sum": 12.0,
+        "tmax": 11.1,
+        "tmin": 5.4,
+        "precip_sum": 17.4,
         "precip_prob": 100,
-        "viento_max": 9.1,
+        "viento_max": 12.5,
         "weather_code": 81,
         "amanecer": "2026-07-21T07:41",
         "atardecer": "2026-07-21T17:56"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 14.9,
-        "tmin": 4.4,
+        "tmax": 14.8,
+        "tmin": 4.1,
         "precip_sum": 0.0,
         "precip_prob": 16,
-        "viento_max": 6.2,
+        "viento_max": 7.6,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:40",
         "atardecer": "2026-07-22T17:57"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 12.0,
-        "tmin": 7.6,
-        "precip_sum": 7.2,
+        "tmax": 12.8,
+        "tmin": 7.5,
+        "precip_sum": 9.6,
         "precip_prob": 93,
-        "viento_max": 11.9,
-        "weather_code": 80,
+        "viento_max": 9.9,
+        "weather_code": 81,
         "amanecer": "2026-07-23T07:40",
         "atardecer": "2026-07-23T17:57"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 17.7,
-        "tmin": 5.1,
+        "tmax": 17.9,
+        "tmin": 5.4,
         "precip_sum": 0.0,
         "precip_prob": 62,
-        "viento_max": 4.0,
+        "viento_max": 4.5,
         "weather_code": 3,
         "amanecer": "2026-07-24T07:39",
         "atardecer": "2026-07-24T17:58"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 16.6,
-        "tmin": 9.5,
-        "precip_sum": 2.1,
+        "tmax": 18.8,
+        "tmin": 9.9,
+        "precip_sum": 0.0,
         "precip_prob": 28,
-        "viento_max": 6.5,
-        "weather_code": 53,
+        "viento_max": 3.4,
+        "weather_code": 3,
         "amanecer": "2026-07-25T07:38",
         "atardecer": "2026-07-25T17:59"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 18.1,
-        "tmin": 11.1,
-        "precip_sum": 1.8,
+        "tmax": 17.5,
+        "tmin": 12.2,
+        "precip_sum": 0.9,
         "precip_prob": 33,
-        "viento_max": 4.9,
+        "viento_max": 9.6,
         "weather_code": 51,
         "amanecer": "2026-07-26T07:38",
         "atardecer": "2026-07-26T17:59"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 15.9,
-        "tmin": 9.8,
-        "precip_sum": 3.0,
+        "tmax": 16.9,
+        "tmin": 9.9,
+        "precip_sum": 12.0,
         "precip_prob": 70,
-        "viento_max": 3.6,
-        "weather_code": 51,
+        "viento_max": 13.8,
+        "weather_code": 80,
         "amanecer": "2026-07-27T07:37",
         "atardecer": "2026-07-27T18:00"
       }
@@ -914,78 +914,78 @@
     "rancagua": [
       {
         "fecha": "2026-07-21",
-        "tmax": 9.6,
-        "tmin": 5.5,
+        "tmax": 9.1,
+        "tmin": 4.6,
         "precip_sum": 16.4,
         "precip_prob": 100,
-        "viento_max": 15.4,
+        "viento_max": 16.2,
         "weather_code": 80,
         "amanecer": "2026-07-21T07:43",
         "atardecer": "2026-07-21T17:55"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 14.4,
-        "tmin": 5.0,
+        "tmax": 14.3,
+        "tmin": 4.0,
         "precip_sum": 0.0,
         "precip_prob": 36,
-        "viento_max": 6.2,
+        "viento_max": 6.7,
         "weather_code": 3,
         "amanecer": "2026-07-22T07:42",
         "atardecer": "2026-07-22T17:56"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 11.7,
-        "tmin": 6.6,
-        "precip_sum": 8.7,
+        "tmax": 11.8,
+        "tmin": 6.1,
+        "precip_sum": 8.5,
         "precip_prob": 97,
-        "viento_max": 9.5,
+        "viento_max": 11.3,
         "weather_code": 80,
         "amanecer": "2026-07-23T07:42",
         "atardecer": "2026-07-23T17:56"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 18.7,
-        "tmin": 5.1,
-        "precip_sum": 0.6,
+        "tmax": 17.7,
+        "tmin": 5.3,
+        "precip_sum": 0.9,
         "precip_prob": 69,
-        "viento_max": 4.1,
+        "viento_max": 4.2,
         "weather_code": 53,
         "amanecer": "2026-07-24T07:41",
         "atardecer": "2026-07-24T17:57"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 14.9,
-        "tmin": 9.5,
-        "precip_sum": 3.0,
+        "tmax": 18.8,
+        "tmin": 8.3,
+        "precip_sum": 0.0,
         "precip_prob": 31,
-        "viento_max": 8.4,
-        "weather_code": 53,
+        "viento_max": 5.1,
+        "weather_code": 3,
         "amanecer": "2026-07-25T07:40",
         "atardecer": "2026-07-25T17:58"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 18.7,
-        "tmin": 9.0,
-        "precip_sum": 2.4,
+        "tmax": 15.0,
+        "tmin": 9.8,
+        "precip_sum": 5.4,
         "precip_prob": 47,
-        "viento_max": 6.6,
+        "viento_max": 6.9,
         "weather_code": 53,
         "amanecer": "2026-07-26T07:40",
         "atardecer": "2026-07-26T17:58"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 14.4,
-        "tmin": 8.9,
-        "precip_sum": 29.1,
+        "tmax": 12.5,
+        "tmin": 8.4,
+        "precip_sum": 18.3,
         "precip_prob": 84,
-        "viento_max": 5.1,
-        "weather_code": 81,
+        "viento_max": 8.9,
+        "weather_code": 80,
         "amanecer": "2026-07-27T07:39",
         "atardecer": "2026-07-27T17:59"
       }
@@ -993,45 +993,45 @@
     "talca": [
       {
         "fecha": "2026-07-21",
-        "tmax": 11.4,
-        "tmin": 8.5,
-        "precip_sum": 22.2,
+        "tmax": 11.7,
+        "tmin": 8.7,
+        "precip_sum": 19.1,
         "precip_prob": 100,
-        "viento_max": 27.8,
-        "weather_code": 81,
+        "viento_max": 23.1,
+        "weather_code": 80,
         "amanecer": "2026-07-21T07:49",
         "atardecer": "2026-07-21T17:56"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 17.3,
-        "tmin": 9.3,
-        "precip_sum": 8.1,
+        "tmax": 16.7,
+        "tmin": 8.3,
+        "precip_sum": 10.6,
         "precip_prob": 92,
-        "viento_max": 28.1,
-        "weather_code": 81,
+        "viento_max": 21.3,
+        "weather_code": 80,
         "amanecer": "2026-07-22T07:49",
         "atardecer": "2026-07-22T17:57"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 11.4,
-        "tmin": 8.8,
-        "precip_sum": 17.6,
+        "tmax": 11.5,
+        "tmin": 9.4,
+        "precip_sum": 13.7,
         "precip_prob": 100,
-        "viento_max": 19.7,
+        "viento_max": 22.6,
         "weather_code": 81,
         "amanecer": "2026-07-23T07:48",
         "atardecer": "2026-07-23T17:57"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 15.0,
-        "tmin": 6.0,
-        "precip_sum": 1.4,
+        "tmax": 14.5,
+        "tmin": 5.7,
+        "precip_sum": 0.3,
         "precip_prob": 74,
-        "viento_max": 8.5,
-        "weather_code": 53,
+        "viento_max": 9.3,
+        "weather_code": 51,
         "amanecer": "2026-07-24T07:47",
         "atardecer": "2026-07-24T17:58"
       },
@@ -1039,31 +1039,31 @@
         "fecha": "2026-07-25",
         "tmax": 16.4,
         "tmin": 8.3,
-        "precip_sum": 5.7,
+        "precip_sum": 7.5,
         "precip_prob": 47,
-        "viento_max": 5.3,
+        "viento_max": 9.1,
         "weather_code": 55,
         "amanecer": "2026-07-25T07:47",
         "atardecer": "2026-07-25T17:59"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 14.3,
+        "tmax": 15.6,
         "tmin": 10.7,
-        "precip_sum": 30.0,
+        "precip_sum": 12.6,
         "precip_prob": 90,
-        "viento_max": 20.0,
+        "viento_max": 21.4,
         "weather_code": 80,
         "amanecer": "2026-07-26T07:46",
         "atardecer": "2026-07-26T17:59"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 14.7,
+        "tmax": 16.5,
         "tmin": 11.0,
-        "precip_sum": 18.6,
+        "precip_sum": 12.3,
         "precip_prob": 88,
-        "viento_max": 15.5,
+        "viento_max": 12.7,
         "weather_code": 80,
         "amanecer": "2026-07-27T07:45",
         "atardecer": "2026-07-27T18:00"
@@ -1073,77 +1073,77 @@
       {
         "fecha": "2026-07-21",
         "tmax": 10.3,
-        "tmin": 6.5,
-        "precip_sum": 21.6,
+        "tmin": 5.4,
+        "precip_sum": 20.9,
         "precip_prob": 100,
-        "viento_max": 33.1,
-        "weather_code": 81,
+        "viento_max": 31.4,
+        "weather_code": 80,
         "amanecer": "2026-07-21T07:54",
         "atardecer": "2026-07-21T17:55"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 15.6,
-        "tmin": 8.6,
-        "precip_sum": 23.8,
+        "tmax": 14.1,
+        "tmin": 9.1,
+        "precip_sum": 18.1,
         "precip_prob": 98,
-        "viento_max": 29.8,
+        "viento_max": 34.5,
         "weather_code": 81,
         "amanecer": "2026-07-22T07:53",
         "atardecer": "2026-07-22T17:56"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 11.9,
-        "tmin": 7.1,
-        "precip_sum": 39.7,
+        "tmax": 11.2,
+        "tmin": 7.0,
+        "precip_sum": 24.1,
         "precip_prob": 100,
-        "viento_max": 34.2,
+        "viento_max": 32.6,
         "weather_code": 81,
         "amanecer": "2026-07-23T07:52",
         "atardecer": "2026-07-23T17:56"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 13.4,
-        "tmin": 4.8,
-        "precip_sum": 0.1,
+        "tmax": 14.1,
+        "tmin": 4.1,
+        "precip_sum": 0.5,
         "precip_prob": 74,
-        "viento_max": 13.3,
+        "viento_max": 12.1,
         "weather_code": 51,
         "amanecer": "2026-07-24T07:52",
         "atardecer": "2026-07-24T17:57"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 15.0,
-        "tmin": 7.8,
-        "precip_sum": 24.6,
+        "tmax": 13.0,
+        "tmin": 7.7,
+        "precip_sum": 11.7,
         "precip_prob": 76,
-        "viento_max": 18.4,
-        "weather_code": 81,
+        "viento_max": 20.5,
+        "weather_code": 80,
         "amanecer": "2026-07-25T07:51",
         "atardecer": "2026-07-25T17:58"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 13.4,
-        "tmin": 10.2,
-        "precip_sum": 50.1,
+        "tmax": 14.8,
+        "tmin": 10.7,
+        "precip_sum": 24.9,
         "precip_prob": 95,
-        "viento_max": 27.6,
-        "weather_code": 81,
+        "viento_max": 28.7,
+        "weather_code": 80,
         "amanecer": "2026-07-26T07:50",
         "atardecer": "2026-07-26T17:59"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 15.6,
-        "tmin": 10.3,
-        "precip_sum": 13.5,
+        "tmax": 13.9,
+        "tmin": 10.7,
+        "precip_sum": 20.1,
         "precip_prob": 92,
-        "viento_max": 21.9,
-        "weather_code": 80,
+        "viento_max": 15.2,
+        "weather_code": 81,
         "amanecer": "2026-07-27T07:49",
         "atardecer": "2026-07-27T17:59"
       }
@@ -1151,77 +1151,77 @@
     "concepcion": [
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
-        "tmin": 6.8,
-        "precip_sum": 33.9,
+        "tmax": 11.7,
+        "tmin": 6.7,
+        "precip_sum": 21.4,
         "precip_prob": 100,
-        "viento_max": 29.3,
+        "viento_max": 32.2,
         "weather_code": 81,
         "amanecer": "2026-07-21T07:58",
         "atardecer": "2026-07-21T17:58"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 14.0,
-        "tmin": 10.8,
-        "precip_sum": 5.6,
+        "tmax": 14.2,
+        "tmin": 11.4,
+        "precip_sum": 8.9,
         "precip_prob": 98,
-        "viento_max": 22.4,
+        "viento_max": 32.9,
         "weather_code": 80,
         "amanecer": "2026-07-22T07:58",
         "atardecer": "2026-07-22T17:59"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 13.2,
-        "tmin": 9.2,
-        "precip_sum": 34.6,
+        "tmax": 13.3,
+        "tmin": 9.5,
+        "precip_sum": 28.0,
         "precip_prob": 100,
-        "viento_max": 41.0,
+        "viento_max": 41.1,
         "weather_code": 95,
         "amanecer": "2026-07-23T07:57",
         "atardecer": "2026-07-23T18:00"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 13.4,
-        "tmin": 5.5,
-        "precip_sum": 0.0,
+        "tmax": 14.0,
+        "tmin": 5.7,
+        "precip_sum": 0.2,
         "precip_prob": 39,
-        "viento_max": 11.0,
-        "weather_code": 3,
+        "viento_max": 10.6,
+        "weather_code": 51,
         "amanecer": "2026-07-24T07:56",
         "atardecer": "2026-07-24T18:01"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 13.0,
-        "tmin": 8.1,
-        "precip_sum": 17.7,
+        "tmax": 12.7,
+        "tmin": 7.2,
+        "precip_sum": 11.7,
         "precip_prob": 80,
-        "viento_max": 24.4,
+        "viento_max": 20.0,
         "weather_code": 81,
         "amanecer": "2026-07-25T07:55",
         "atardecer": "2026-07-25T18:01"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 13.9,
-        "tmin": 11.3,
-        "precip_sum": 39.0,
+        "tmax": 14.6,
+        "tmin": 11.2,
+        "precip_sum": 38.1,
         "precip_prob": 98,
-        "viento_max": 33.8,
+        "viento_max": 33.7,
         "weather_code": 95,
         "amanecer": "2026-07-26T07:55",
         "atardecer": "2026-07-26T18:02"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 13.7,
-        "tmin": 11.4,
-        "precip_sum": 8.7,
+        "tmax": 13.5,
+        "tmin": 11.9,
+        "precip_sum": 19.2,
         "precip_prob": 94,
-        "viento_max": 18.6,
+        "viento_max": 16.1,
         "weather_code": 80,
         "amanecer": "2026-07-27T07:54",
         "atardecer": "2026-07-27T18:03"
@@ -1230,78 +1230,78 @@
     "temuco": [
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
+        "tmax": 13.4,
         "tmin": 0.5,
-        "precip_sum": 5.5,
+        "precip_sum": 0.7,
         "precip_prob": 90,
-        "viento_max": 19.3,
-        "weather_code": 80,
+        "viento_max": 16.0,
+        "weather_code": 53,
         "amanecer": "2026-07-21T08:01",
         "atardecer": "2026-07-21T17:52"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 13.1,
-        "tmin": 8.3,
-        "precip_sum": 2.8,
+        "tmax": 11.9,
+        "tmin": 7.1,
+        "precip_sum": 7.9,
         "precip_prob": 93,
-        "viento_max": 24.3,
-        "weather_code": 55,
+        "viento_max": 25.6,
+        "weather_code": 80,
         "amanecer": "2026-07-22T08:00",
         "atardecer": "2026-07-22T17:53"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 10.7,
-        "tmin": 5.9,
-        "precip_sum": 11.1,
+        "tmax": 10.6,
+        "tmin": 6.4,
+        "precip_sum": 8.7,
         "precip_prob": 100,
-        "viento_max": 34.3,
+        "viento_max": 35.4,
         "weather_code": 80,
         "amanecer": "2026-07-23T07:59",
         "atardecer": "2026-07-23T17:53"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 11.2,
-        "tmin": 5.3,
-        "precip_sum": 0.3,
+        "tmax": 12.2,
+        "tmin": 4.9,
+        "precip_sum": 0.0,
         "precip_prob": 51,
-        "viento_max": 18.0,
-        "weather_code": 51,
+        "viento_max": 16.2,
+        "weather_code": 3,
         "amanecer": "2026-07-24T07:59",
         "atardecer": "2026-07-24T17:54"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 9.1,
-        "tmin": 6.8,
-        "precip_sum": 28.2,
+        "tmax": 10.8,
+        "tmin": 6.3,
+        "precip_sum": 29.1,
         "precip_prob": 76,
-        "viento_max": 31.1,
+        "viento_max": 25.4,
         "weather_code": 81,
         "amanecer": "2026-07-25T07:58",
         "atardecer": "2026-07-25T17:55"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 13.9,
-        "tmin": 9.1,
-        "precip_sum": 33.0,
+        "tmax": 14.3,
+        "tmin": 9.2,
+        "precip_sum": 34.8,
         "precip_prob": 100,
-        "viento_max": 29.0,
-        "weather_code": 81,
+        "viento_max": 29.6,
+        "weather_code": 95,
         "amanecer": "2026-07-26T07:57",
         "atardecer": "2026-07-26T17:56"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 11.3,
-        "tmin": 8.1,
-        "precip_sum": 22.8,
+        "tmax": 12.2,
+        "tmin": 9.9,
+        "precip_sum": 3.6,
         "precip_prob": 87,
-        "viento_max": 18.6,
-        "weather_code": 55,
+        "viento_max": 17.7,
+        "weather_code": 53,
         "amanecer": "2026-07-27T07:56",
         "atardecer": "2026-07-27T17:57"
       }
@@ -1309,78 +1309,78 @@
     "valdivia": [
       {
         "fecha": "2026-07-21",
-        "tmax": 10.4,
-        "tmin": -0.1,
-        "precip_sum": 0.3,
+        "tmax": 10.6,
+        "tmin": -0.3,
+        "precip_sum": 0.0,
         "precip_prob": 55,
-        "viento_max": 7.6,
-        "weather_code": 51,
+        "viento_max": 5.9,
+        "weather_code": 3,
         "amanecer": "2026-07-21T08:06",
         "atardecer": "2026-07-21T17:51"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 10.0,
-        "tmin": 5.8,
-        "precip_sum": 14.0,
+        "tmax": 9.9,
+        "tmin": 4.0,
+        "precip_sum": 8.0,
         "precip_prob": 88,
-        "viento_max": 10.4,
-        "weather_code": 81,
+        "viento_max": 13.6,
+        "weather_code": 80,
         "amanecer": "2026-07-22T08:05",
         "atardecer": "2026-07-22T17:52"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 10.5,
-        "tmin": 5.3,
-        "precip_sum": 35.5,
+        "tmax": 10.4,
+        "tmin": 6.8,
+        "precip_sum": 27.8,
         "precip_prob": 100,
-        "viento_max": 19.3,
+        "viento_max": 21.5,
         "weather_code": 95,
         "amanecer": "2026-07-23T08:05",
         "atardecer": "2026-07-23T17:53"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 9.4,
-        "tmin": 5.3,
-        "precip_sum": 22.3,
+        "tmax": 10.8,
+        "tmin": 4.1,
+        "precip_sum": 9.2,
         "precip_prob": 90,
-        "viento_max": 10.2,
-        "weather_code": 81,
+        "viento_max": 10.4,
+        "weather_code": 80,
         "amanecer": "2026-07-24T08:04",
         "atardecer": "2026-07-24T17:54"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 8.4,
-        "tmin": 6.7,
-        "precip_sum": 24.9,
+        "tmax": 9.2,
+        "tmin": 5.8,
+        "precip_sum": 9.6,
         "precip_prob": 81,
-        "viento_max": 14.6,
+        "viento_max": 15.7,
         "weather_code": 80,
         "amanecer": "2026-07-25T08:03",
         "atardecer": "2026-07-25T17:55"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 12.8,
-        "tmin": 8.6,
-        "precip_sum": 54.9,
+        "tmax": 12.5,
+        "tmin": 8.3,
+        "precip_sum": 40.8,
         "precip_prob": 100,
-        "viento_max": 21.4,
+        "viento_max": 25.5,
         "weather_code": 95,
         "amanecer": "2026-07-26T08:02",
         "atardecer": "2026-07-26T17:56"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 11.5,
-        "tmin": 6.6,
-        "precip_sum": 10.8,
+        "tmax": 11.2,
+        "tmin": 9.9,
+        "precip_sum": 56.4,
         "precip_prob": 90,
-        "viento_max": 13.6,
-        "weather_code": 55,
+        "viento_max": 15.4,
+        "weather_code": 95,
         "amanecer": "2026-07-27T08:01",
         "atardecer": "2026-07-27T17:56"
       }
@@ -1388,78 +1388,78 @@
     "puertomontt": [
       {
         "fecha": "2026-07-21",
-        "tmax": 9.5,
-        "tmin": -0.6,
+        "tmax": 9.7,
+        "tmin": -1.9,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 9.0,
+        "viento_max": 8.3,
         "weather_code": 3,
         "amanecer": "2026-07-21T08:09",
         "atardecer": "2026-07-21T17:46"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 10.8,
-        "tmin": 1.8,
-        "precip_sum": 9.3,
+        "tmax": 10.9,
+        "tmin": 1.7,
+        "precip_sum": 4.4,
         "precip_prob": 89,
-        "viento_max": 28.3,
-        "weather_code": 80,
+        "viento_max": 29.4,
+        "weather_code": 55,
         "amanecer": "2026-07-22T08:08",
         "atardecer": "2026-07-22T17:47"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": 11.8,
-        "tmin": 7.1,
-        "precip_sum": 11.1,
+        "tmax": 11.4,
+        "tmin": 6.9,
+        "precip_sum": 10.6,
         "precip_prob": 99,
-        "viento_max": 41.4,
-        "weather_code": 81,
+        "viento_max": 42.2,
+        "weather_code": 80,
         "amanecer": "2026-07-23T08:08",
         "atardecer": "2026-07-23T17:48"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 10.5,
-        "tmin": 4.9,
-        "precip_sum": 6.5,
+        "tmax": 10.9,
+        "tmin": 5.7,
+        "precip_sum": 3.5,
         "precip_prob": 82,
-        "viento_max": 24.0,
-        "weather_code": 53,
+        "viento_max": 26.4,
+        "weather_code": 51,
         "amanecer": "2026-07-24T08:07",
         "atardecer": "2026-07-24T17:49"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 10.8,
-        "tmin": 8.8,
-        "precip_sum": 4.2,
+        "tmax": 11.3,
+        "tmin": 7.5,
+        "precip_sum": 7.8,
         "precip_prob": 66,
-        "viento_max": 33.3,
-        "weather_code": 51,
+        "viento_max": 32.4,
+        "weather_code": 80,
         "amanecer": "2026-07-25T08:06",
         "atardecer": "2026-07-25T17:50"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 13.4,
-        "tmin": 9.4,
-        "precip_sum": 23.7,
+        "tmax": 13.5,
+        "tmin": 8.6,
+        "precip_sum": 31.5,
         "precip_prob": 96,
-        "viento_max": 35.2,
-        "weather_code": 81,
+        "viento_max": 37.5,
+        "weather_code": 95,
         "amanecer": "2026-07-26T08:05",
         "atardecer": "2026-07-26T17:50"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 10.4,
-        "tmin": 6.3,
-        "precip_sum": 6.3,
+        "tmax": 11.0,
+        "tmin": 8.5,
+        "precip_sum": 26.1,
         "precip_prob": 86,
-        "viento_max": 22.5,
-        "weather_code": 53,
+        "viento_max": 27.7,
+        "weather_code": 80,
         "amanecer": "2026-07-27T08:04",
         "atardecer": "2026-07-27T17:51"
       }
@@ -1467,22 +1467,22 @@
     "coyhaique": [
       {
         "fecha": "2026-07-21",
-        "tmax": -0.6,
-        "tmin": -12.6,
+        "tmax": -1.1,
+        "tmin": -14.1,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 2.4,
-        "weather_code": 1,
+        "viento_max": 3.2,
+        "weather_code": 3,
         "amanecer": "2026-07-21T08:18",
         "atardecer": "2026-07-21T17:30"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": -1.7,
-        "tmin": -11.3,
-        "precip_sum": 0.9,
+        "tmax": -1.4,
+        "tmin": -10.7,
+        "precip_sum": 2.0,
         "precip_prob": 57,
-        "viento_max": 4.2,
+        "viento_max": 5.2,
         "weather_code": 73,
         "amanecer": "2026-07-22T08:17",
         "atardecer": "2026-07-22T17:31"
@@ -1490,55 +1490,55 @@
       {
         "fecha": "2026-07-23",
         "tmax": 3.2,
-        "tmin": -3.7,
-        "precip_sum": 19.0,
+        "tmin": -3.1,
+        "precip_sum": 15.9,
         "precip_prob": 100,
-        "viento_max": 6.4,
-        "weather_code": 86,
+        "viento_max": 5.9,
+        "weather_code": 85,
         "amanecer": "2026-07-23T08:16",
         "atardecer": "2026-07-23T17:32"
       },
       {
         "fecha": "2026-07-24",
-        "tmax": 6.0,
-        "tmin": -1.4,
-        "precip_sum": 2.1,
+        "tmax": 5.2,
+        "tmin": 1.2,
+        "precip_sum": 2.8,
         "precip_prob": 64,
-        "viento_max": 6.1,
-        "weather_code": 73,
+        "viento_max": 5.6,
+        "weather_code": 85,
         "amanecer": "2026-07-24T08:15",
         "atardecer": "2026-07-24T17:33"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 7.1,
-        "tmin": 2.4,
-        "precip_sum": 2.1,
+        "tmax": 7.4,
+        "tmin": 2.0,
+        "precip_sum": 9.0,
         "precip_prob": 46,
-        "viento_max": 7.8,
-        "weather_code": 51,
+        "viento_max": 3.1,
+        "weather_code": 85,
         "amanecer": "2026-07-25T08:14",
         "atardecer": "2026-07-25T17:35"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 4.4,
-        "tmin": 1.6,
-        "precip_sum": 10.2,
+        "tmax": 2.9,
+        "tmin": -2.6,
+        "precip_sum": 14.7,
         "precip_prob": 59,
-        "viento_max": 2.3,
-        "weather_code": 86,
+        "viento_max": 3.1,
+        "weather_code": 75,
         "amanecer": "2026-07-26T08:13",
         "atardecer": "2026-07-26T17:36"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 3.7,
-        "tmin": -7.0,
-        "precip_sum": 5.1,
+        "tmax": 4.5,
+        "tmin": 1.8,
+        "precip_sum": 3.9,
         "precip_prob": 57,
-        "viento_max": 8.4,
-        "weather_code": 86,
+        "viento_max": 2.2,
+        "weather_code": 85,
         "amanecer": "2026-07-27T08:12",
         "atardecer": "2026-07-27T17:37"
       }
@@ -1546,33 +1546,33 @@
     "puntaarenas": [
       {
         "fecha": "2026-07-21",
-        "tmax": 3.2,
-        "tmin": -0.8,
+        "tmax": 2.9,
+        "tmin": -1.1,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 16.9,
+        "viento_max": 15.7,
         "weather_code": 3,
         "amanecer": "2026-07-21T08:42",
         "atardecer": "2026-07-21T16:58"
       },
       {
         "fecha": "2026-07-22",
-        "tmax": 1.8,
-        "tmin": -3.6,
+        "tmax": 1.5,
+        "tmin": -2.8,
         "precip_sum": 0.0,
         "precip_prob": 0,
-        "viento_max": 14.1,
+        "viento_max": 15.0,
         "weather_code": 2,
         "amanecer": "2026-07-22T08:40",
         "atardecer": "2026-07-22T16:59"
       },
       {
         "fecha": "2026-07-23",
-        "tmax": -0.4,
+        "tmax": -0.9,
         "tmin": -4.4,
         "precip_sum": 0.0,
         "precip_prob": 12,
-        "viento_max": 15.4,
+        "viento_max": 15.7,
         "weather_code": 3,
         "amanecer": "2026-07-23T08:39",
         "atardecer": "2026-07-23T17:01"
@@ -1580,44 +1580,44 @@
       {
         "fecha": "2026-07-24",
         "tmax": 1.5,
-        "tmin": -1.0,
-        "precip_sum": 9.3,
+        "tmin": -0.4,
+        "precip_sum": 20.9,
         "precip_prob": 92,
-        "viento_max": 16.8,
-        "weather_code": 73,
+        "viento_max": 20.7,
+        "weather_code": 75,
         "amanecer": "2026-07-24T08:38",
         "atardecer": "2026-07-24T17:02"
       },
       {
         "fecha": "2026-07-25",
-        "tmax": 2.0,
-        "tmin": 1.1,
-        "precip_sum": 3.0,
+        "tmax": 2.7,
+        "tmin": -1.8,
+        "precip_sum": 0.6,
         "precip_prob": 80,
-        "viento_max": 5.4,
-        "weather_code": 73,
+        "viento_max": 8.7,
+        "weather_code": 51,
         "amanecer": "2026-07-25T08:36",
         "atardecer": "2026-07-25T17:04"
       },
       {
         "fecha": "2026-07-26",
-        "tmax": 1.9,
-        "tmin": -0.8,
-        "precip_sum": 3.9,
+        "tmax": 1.8,
+        "tmin": -0.4,
+        "precip_sum": 4.2,
         "precip_prob": 45,
-        "viento_max": 5.0,
-        "weather_code": 71,
+        "viento_max": 7.6,
+        "weather_code": 73,
         "amanecer": "2026-07-26T08:35",
         "atardecer": "2026-07-26T17:05"
       },
       {
         "fecha": "2026-07-27",
-        "tmax": 1.4,
-        "tmin": -1.6,
-        "precip_sum": 0.3,
+        "tmax": 2.6,
+        "tmin": -1.3,
+        "precip_sum": 0.6,
         "precip_prob": 17,
-        "viento_max": 18.6,
-        "weather_code": 71,
+        "viento_max": 8.0,
+        "weather_code": 51,
         "amanecer": "2026-07-27T08:33",
         "atardecer": "2026-07-27T17:06"
       }
@@ -1631,32 +1631,32 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 21.3,
+          "tmax": 21.1,
           "tmin": 14.9
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 21.3,
+          "tmax": 21.2,
           "tmin": 14.9
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 21.3,
+          "tmax": 21.2,
           "tmin": 14.9
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 21.3,
+          "tmax": 21.2,
           "tmin": 14.9
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 21.3,
+          "tmax": 21.2,
           "tmin": 14.9
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 21.3,
+          "tmax": 21.2,
           "tmin": 14.9
         }
       ]
@@ -1668,33 +1668,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
+          "tmax": 21.1,
+          "tmin": 13.7
+        },
+        {
+          "fecha": "2026-07-23",
           "tmax": 21.2,
           "tmin": 13.6
         },
         {
-          "fecha": "2026-07-23",
+          "fecha": "2026-07-24",
+          "tmax": 21.2,
+          "tmin": 13.6
+        },
+        {
+          "fecha": "2026-07-25",
+          "tmax": 21.2,
+          "tmin": 13.5
+        },
+        {
+          "fecha": "2026-07-26",
           "tmax": 21.3,
           "tmin": 13.5
         },
         {
-          "fecha": "2026-07-24",
-          "tmax": 21.4,
-          "tmin": 13.4
-        },
-        {
-          "fecha": "2026-07-25",
-          "tmax": 21.4,
-          "tmin": 13.4
-        },
-        {
-          "fecha": "2026-07-26",
-          "tmax": 21.4,
-          "tmin": 13.4
-        },
-        {
           "fecha": "2026-07-27",
-          "tmax": 21.4,
-          "tmin": 13.4
+          "tmax": 21.2,
+          "tmin": 13.5
         }
       ]
     },
@@ -1705,33 +1705,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 20.3,
-          "tmin": 16.1
+          "tmax": 20.4,
+          "tmin": 15.6
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 20.4,
-          "tmin": 16.5
+          "tmax": 20.6,
+          "tmin": 16.0
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 20.5,
-          "tmin": 16.7
+          "tmax": 20.7,
+          "tmin": 16.2
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 20.6,
-          "tmin": 16.8
+          "tmax": 20.7,
+          "tmin": 16.3
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 20.6,
-          "tmin": 16.8
+          "tmax": 20.7,
+          "tmin": 16.3
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 20.6,
-          "tmin": 16.8
+          "tmax": 20.7,
+          "tmin": 16.3
         }
       ]
     },
@@ -1742,32 +1742,32 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 16.8,
+          "tmax": 16.5,
           "tmin": 11.1
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 16.6,
+          "tmax": 16.2,
           "tmin": 11.2
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 16.4,
+          "tmax": 16.1,
           "tmin": 11.2
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 16.4,
+          "tmax": 16.0,
           "tmin": 11.3
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 16.4,
+          "tmax": 16.0,
           "tmin": 11.3
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 16.4,
+          "tmax": 16.0,
           "tmin": 11.3
         }
       ]
@@ -1779,33 +1779,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 16.4,
-          "tmin": 9.3
+          "tmax": 15.5,
+          "tmin": 8.5
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 16.3,
-          "tmin": 9.0
+          "tmax": 15.4,
+          "tmin": 8.2
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 16.3,
-          "tmin": 8.9
+          "tmax": 15.2,
+          "tmin": 8.0
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 16.2,
-          "tmin": 8.8
+          "tmax": 15.2,
+          "tmin": 7.9
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 16.2,
-          "tmin": 8.8
+          "tmax": 15.2,
+          "tmin": 7.8
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 16.2,
-          "tmin": 8.8
+          "tmax": 15.2,
+          "tmin": 7.8
         }
       ]
     },
@@ -1816,33 +1816,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 14.1,
-          "tmin": 10.4
+          "tmax": 13.2,
+          "tmin": 10.8
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 14.3,
-          "tmin": 10.1
+          "tmax": 13.3,
+          "tmin": 10.6
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 14.4,
-          "tmin": 9.9
+          "tmax": 13.4,
+          "tmin": 10.4
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 14.4,
-          "tmin": 9.8
+          "tmax": 13.4,
+          "tmin": 10.4
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 14.4,
-          "tmin": 9.8
+          "tmax": 13.4,
+          "tmin": 10.3
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 14.4,
-          "tmin": 9.8
+          "tmax": 13.4,
+          "tmin": 10.3
         }
       ]
     },
@@ -1853,33 +1853,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 11.4,
-          "tmin": 5.2
+          "tmax": 10.6,
+          "tmin": 4.6
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 11.1,
-          "tmin": 4.7
+          "tmax": 10.3,
+          "tmin": 4.1
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 11.0,
-          "tmin": 4.5
+          "tmax": 10.1,
+          "tmin": 3.8
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 10.9,
-          "tmin": 4.3
+          "tmax": 10.0,
+          "tmin": 3.7
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 10.9,
-          "tmin": 4.3
+          "tmax": 10.0,
+          "tmin": 3.6
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 10.9,
-          "tmin": 4.3
+          "tmax": 10.0,
+          "tmin": 3.6
         }
       ]
     },
@@ -1890,33 +1890,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 9.2,
-          "tmin": 4.8
+          "tmax": 8.6,
+          "tmin": 3.8
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 8.9,
-          "tmin": 4.3
+          "tmax": 8.3,
+          "tmin": 3.2
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 8.7,
-          "tmin": 4.0
+          "tmax": 8.1,
+          "tmin": 2.9
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 8.6,
-          "tmin": 3.9
+          "tmax": 8.0,
+          "tmin": 2.7
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 8.6,
-          "tmin": 3.9
+          "tmax": 8.0,
+          "tmin": 2.7
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 8.6,
-          "tmin": 3.9
+          "tmax": 8.0,
+          "tmin": 2.7
         }
       ]
     },
@@ -1927,33 +1927,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 11.4,
-          "tmin": 8.0
+          "tmax": 11.7,
+          "tmin": 8.2
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 11.4,
-          "tmin": 7.6
+          "tmax": 11.7,
+          "tmin": 7.9
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 11.4,
-          "tmin": 7.4
+          "tmax": 11.7,
+          "tmin": 7.7
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 11.4,
-          "tmin": 7.3
+          "tmax": 11.8,
+          "tmin": 7.6
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 11.4,
-          "tmin": 7.3
+          "tmax": 11.8,
+          "tmin": 7.6
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 11.4,
-          "tmin": 7.3
+          "tmax": 11.8,
+          "tmin": 7.6
         }
       ]
     },
@@ -1965,32 +1965,32 @@
         {
           "fecha": "2026-07-22",
           "tmax": 10.2,
-          "tmin": 5.7
+          "tmin": 4.5
         },
         {
           "fecha": "2026-07-23",
           "tmax": 10.2,
-          "tmin": 5.2
+          "tmin": 3.9
         },
         {
           "fecha": "2026-07-24",
           "tmax": 10.2,
-          "tmin": 4.9
+          "tmin": 3.5
         },
         {
           "fecha": "2026-07-25",
           "tmax": 10.2,
-          "tmin": 4.8
+          "tmin": 3.3
         },
         {
           "fecha": "2026-07-26",
           "tmax": 10.2,
-          "tmin": 4.7
+          "tmin": 3.3
         },
         {
           "fecha": "2026-07-27",
           "tmax": 10.2,
-          "tmin": 4.8
+          "tmin": 3.3
         }
       ]
     },
@@ -2001,33 +2001,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 11.7,
-          "tmin": 5.9
+          "tmax": 11.6,
+          "tmin": 5.8
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 11.6,
-          "tmin": 5.3
+          "tmax": 11.5,
+          "tmin": 5.1
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 11.5,
-          "tmin": 4.9
+          "tmax": 11.4,
+          "tmin": 4.8
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 11.5,
-          "tmin": 4.7
+          "tmax": 11.4,
+          "tmin": 4.6
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 11.5,
-          "tmin": 4.7
+          "tmax": 11.4,
+          "tmin": 4.6
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 11.5,
-          "tmin": 4.7
+          "tmax": 11.4,
+          "tmin": 4.6
         }
       ]
     },
@@ -2038,32 +2038,32 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 11.7,
+          "tmax": 13.6,
           "tmin": -1.1
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 11.7,
+          "tmax": 13.7,
           "tmin": -2.1
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 11.7,
+          "tmax": 13.7,
           "tmin": -2.7
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 11.6,
+          "tmax": 13.7,
           "tmin": -3.0
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 11.6,
+          "tmax": 13.7,
           "tmin": -3.1
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 11.6,
+          "tmax": 13.7,
           "tmin": -3.1
         }
       ]
@@ -2075,33 +2075,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 9.7,
-          "tmin": -1.8
+          "tmax": 9.9,
+          "tmin": -2.1
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 9.3,
-          "tmin": -2.9
+          "tmax": 9.5,
+          "tmin": -3.2
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 9.0,
-          "tmin": -3.6
+          "tmax": 9.3,
+          "tmin": -3.8
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 8.9,
-          "tmin": -3.9
+          "tmax": 9.1,
+          "tmin": -4.2
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 8.8,
-          "tmin": -4.0
+          "tmax": 9.1,
+          "tmin": -4.3
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 8.9,
-          "tmin": -3.9
+          "tmax": 9.1,
+          "tmin": -4.2
         }
       ]
     },
@@ -2112,33 +2112,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 8.3,
-          "tmin": -2.4
+          "tmax": 8.6,
+          "tmin": -3.9
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 7.6,
-          "tmin": -3.6
+          "tmax": 7.9,
+          "tmin": -5.2
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 7.2,
-          "tmin": -4.3
+          "tmax": 7.4,
+          "tmin": -6.0
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 7.0,
-          "tmin": -4.6
+          "tmax": 7.2,
+          "tmin": -6.3
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 6.9,
-          "tmin": -4.7
+          "tmax": 7.2,
+          "tmin": -6.4
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 6.9,
-          "tmin": -4.7
+          "tmax": 7.2,
+          "tmin": -6.4
         }
       ]
     },
@@ -2149,33 +2149,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": -1.6,
-          "tmin": -15.7
+          "tmax": -2.2,
+          "tmin": -17.4
         },
         {
           "fecha": "2026-07-23",
-          "tmax": -2.3,
-          "tmin": -17.6
-        },
-        {
-          "fecha": "2026-07-24",
-          "tmax": -2.7,
-          "tmin": -18.8
-        },
-        {
-          "fecha": "2026-07-25",
-          "tmax": -2.8,
-          "tmin": -19.4
-        },
-        {
-          "fecha": "2026-07-26",
           "tmax": -2.9,
           "tmin": -19.5
         },
         {
+          "fecha": "2026-07-24",
+          "tmax": -3.3,
+          "tmin": -20.7
+        },
+        {
+          "fecha": "2026-07-25",
+          "tmax": -3.5,
+          "tmin": -21.3
+        },
+        {
+          "fecha": "2026-07-26",
+          "tmax": -3.6,
+          "tmin": -21.5
+        },
+        {
           "fecha": "2026-07-27",
-          "tmax": -2.9,
-          "tmin": -19.4
+          "tmax": -3.5,
+          "tmin": -21.4
         }
       ]
     },
@@ -2186,33 +2186,33 @@
       "pronostico": [
         {
           "fecha": "2026-07-22",
-          "tmax": 3.6,
-          "tmin": -0.6
+          "tmax": 3.3,
+          "tmin": -1.0
         },
         {
           "fecha": "2026-07-23",
-          "tmax": 3.9,
-          "tmin": -0.5
+          "tmax": 3.5,
+          "tmin": -0.9
         },
         {
           "fecha": "2026-07-24",
-          "tmax": 4.0,
-          "tmin": -0.5
+          "tmax": 3.6,
+          "tmin": -0.8
         },
         {
           "fecha": "2026-07-25",
-          "tmax": 4.1,
-          "tmin": -0.4
+          "tmax": 3.7,
+          "tmin": -0.8
         },
         {
           "fecha": "2026-07-26",
-          "tmax": 4.1,
-          "tmin": -0.4
+          "tmax": 3.7,
+          "tmin": -0.8
         },
         {
           "fecha": "2026-07-27",
-          "tmax": 4.1,
-          "tmin": -0.4
+          "tmax": 3.7,
+          "tmin": -0.8
         }
       ]
     }
@@ -2256,9 +2256,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 21.2,
+        "tmax": 21.1,
         "tmin": 14.9,
-        "tmed": 18.1,
+        "tmed": 18.0,
         "precip_sum": 0.0
       }
     ],
@@ -2300,9 +2300,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 21.1,
-        "tmin": 13.8,
-        "tmed": 17.5,
+        "tmax": 21.0,
+        "tmin": 13.9,
+        "tmed": 17.4,
         "precip_sum": 0.0
       }
     ],
@@ -2344,9 +2344,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 20.0,
-        "tmin": 15.5,
-        "tmed": 17.8,
+        "tmax": 20.1,
+        "tmin": 15.1,
+        "tmed": 17.6,
         "precip_sum": 0.0
       }
     ],
@@ -2388,10 +2388,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 17.2,
+        "tmax": 16.9,
         "tmin": 10.9,
-        "tmed": 14.1,
-        "precip_sum": 2.1
+        "tmed": 13.9,
+        "precip_sum": 2.7
       }
     ],
     "laserena": [
@@ -2432,10 +2432,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 16.6,
-        "tmin": 9.7,
-        "tmed": 13.2,
-        "precip_sum": 26.9
+        "tmax": 15.8,
+        "tmin": 9.0,
+        "tmed": 12.4,
+        "precip_sum": 26.4
       }
     ],
     "valparaiso": [
@@ -2476,9 +2476,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 13.9,
-        "tmin": 10.8,
-        "tmed": 12.4,
+        "tmax": 13.1,
+        "tmin": 11.2,
+        "tmed": 12.1,
         "precip_sum": 37.9
       }
     ],
@@ -2520,10 +2520,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
-        "tmin": 5.9,
-        "tmed": 8.9,
-        "precip_sum": 12.0
+        "tmax": 11.1,
+        "tmin": 5.4,
+        "tmed": 8.2,
+        "precip_sum": 17.4
       }
     ],
     "rancagua": [
@@ -2564,9 +2564,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 9.6,
-        "tmin": 5.5,
-        "tmed": 7.5,
+        "tmax": 9.1,
+        "tmin": 4.6,
+        "tmed": 6.8,
         "precip_sum": 16.4
       }
     ],
@@ -2608,10 +2608,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 11.4,
-        "tmin": 8.5,
-        "tmed": 9.9,
-        "precip_sum": 22.2
+        "tmax": 11.7,
+        "tmin": 8.7,
+        "tmed": 10.2,
+        "precip_sum": 19.1
       }
     ],
     "chillan": [
@@ -2653,9 +2653,9 @@
       {
         "fecha": "2026-07-21",
         "tmax": 10.3,
-        "tmin": 6.5,
-        "tmed": 8.4,
-        "precip_sum": 21.6
+        "tmin": 5.4,
+        "tmed": 7.9,
+        "precip_sum": 20.9
       }
     ],
     "concepcion": [
@@ -2696,10 +2696,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
-        "tmin": 6.8,
-        "tmed": 9.3,
-        "precip_sum": 33.9
+        "tmax": 11.7,
+        "tmin": 6.7,
+        "tmed": 9.2,
+        "precip_sum": 21.4
       }
     ],
     "temuco": [
@@ -2740,10 +2740,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 11.8,
+        "tmax": 13.4,
         "tmin": 0.5,
-        "tmed": 6.2,
-        "precip_sum": 5.5
+        "tmed": 7.0,
+        "precip_sum": 0.7
       }
     ],
     "valdivia": [
@@ -2784,10 +2784,10 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 10.4,
-        "tmin": -0.1,
-        "tmed": 5.2,
-        "precip_sum": 0.3
+        "tmax": 10.6,
+        "tmin": -0.3,
+        "tmed": 5.1,
+        "precip_sum": 0.0
       }
     ],
     "puertomontt": [
@@ -2828,9 +2828,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 9.5,
-        "tmin": -0.6,
-        "tmed": 4.5,
+        "tmax": 9.7,
+        "tmin": -1.9,
+        "tmed": 3.9,
         "precip_sum": 0.0
       }
     ],
@@ -2872,9 +2872,9 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": -0.6,
-        "tmin": -12.6,
-        "tmed": -6.6,
+        "tmax": -1.1,
+        "tmin": -14.1,
+        "tmed": -7.6,
         "precip_sum": 0.0
       }
     ],
@@ -2916,23 +2916,15 @@
       },
       {
         "fecha": "2026-07-21",
-        "tmax": 3.2,
-        "tmin": -0.8,
-        "tmed": 1.2,
+        "tmax": 2.9,
+        "tmin": -1.1,
+        "tmed": 0.9,
         "precip_sum": 0.0
       }
     ]
   },
   "historico_intradia": {
     "arica": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 14.9,
-        "humedad": 91,
-        "precipitacion": 0.0,
-        "presion": 1009.9,
-        "viento_vel": 0.6
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 14.9,
@@ -3692,17 +3684,17 @@
         "precipitacion": 0.0,
         "presion": 1014.1,
         "viento_vel": 1.1
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 15.5,
+        "humedad": 87,
+        "precipitacion": 0.0,
+        "presion": 1013.7,
+        "viento_vel": 0.3
       }
     ],
     "iquique": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 15.4,
-        "humedad": 91,
-        "precipitacion": 0.0,
-        "presion": 1011.5,
-        "viento_vel": 2.3
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 15.6,
@@ -4462,17 +4454,17 @@
         "precipitacion": 0.0,
         "presion": 1014.7,
         "viento_vel": 4.1
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 15.4,
+        "humedad": 84,
+        "precipitacion": 0.0,
+        "presion": 1014.2,
+        "viento_vel": 3.2
       }
     ],
     "antofagasta": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 15.6,
-        "humedad": 93,
-        "precipitacion": 0.0,
-        "presion": 1010.3,
-        "viento_vel": 3.3
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 15.7,
@@ -5232,17 +5224,17 @@
         "precipitacion": 0.0,
         "presion": 1014.7,
         "viento_vel": 2.6
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 15.9,
+        "humedad": 93,
+        "precipitacion": 0.0,
+        "presion": 1014.6,
+        "viento_vel": 2.7
       }
     ],
     "copiapo": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 12.4,
-        "humedad": 93,
-        "precipitacion": 0.2,
-        "presion": 965.8,
-        "viento_vel": 4.0
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 12.6,
@@ -6002,17 +5994,17 @@
         "precipitacion": 0.0,
         "presion": 969.3,
         "viento_vel": 0.2
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 12.8,
+        "humedad": 98,
+        "precipitacion": 0.0,
+        "presion": 970.4,
+        "viento_vel": 2.0
       }
     ],
     "laserena": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 11.0,
-        "humedad": 92,
-        "precipitacion": 0.2,
-        "presion": 1007.1,
-        "viento_vel": 3.9
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 10.9,
@@ -6772,17 +6764,17 @@
         "precipitacion": 0.6,
         "presion": 1009.5,
         "viento_vel": 3.7
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 11.1,
+        "humedad": 85,
+        "precipitacion": 0.0,
+        "presion": 1009.5,
+        "viento_vel": 3.5
       }
     ],
     "valparaiso": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 11.1,
-        "humedad": 83,
-        "precipitacion": 0.0,
-        "presion": 1009.8,
-        "viento_vel": 0.8
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 10.6,
@@ -7542,17 +7534,17 @@
         "precipitacion": 0.5,
         "presion": 1009.5,
         "viento_vel": 16.6
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 11.2,
+        "humedad": 91,
+        "precipitacion": 0.6,
+        "presion": 1009.3,
+        "viento_vel": 22.2
       }
     ],
     "santiago": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 5.2,
-        "humedad": 69,
-        "precipitacion": 0.0,
-        "presion": 947.4,
-        "viento_vel": 3.2
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 4.9,
@@ -8312,17 +8304,17 @@
         "precipitacion": 0.0,
         "presion": 948.0,
         "viento_vel": 2.3
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 7.7,
+        "humedad": 92,
+        "precipitacion": 0.1,
+        "presion": 947.2,
+        "viento_vel": 4.7
       }
     ],
     "rancagua": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 4.0,
-        "humedad": 88,
-        "precipitacion": 0.0,
-        "presion": 951.5,
-        "viento_vel": 0.9
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 3.7,
@@ -9082,17 +9074,17 @@
         "precipitacion": 0.6,
         "presion": 952.5,
         "viento_vel": 9.3
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 6.6,
+        "humedad": 93,
+        "precipitacion": 0.4,
+        "presion": 951.9,
+        "viento_vel": 4.3
       }
     ],
     "talca": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 6.4,
-        "humedad": 94,
-        "precipitacion": 0.0,
-        "presion": 1000.1,
-        "viento_vel": 4.1
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 6.8,
@@ -9852,17 +9844,17 @@
         "precipitacion": 0.1,
         "presion": 999.1,
         "viento_vel": 5.1
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 9.0,
+        "humedad": 95,
+        "precipitacion": 0.3,
+        "presion": 999.2,
+        "viento_vel": 6.8
       }
     ],
     "chillan": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 7.5,
-        "humedad": 93,
-        "precipitacion": 0.0,
-        "presion": 996.6,
-        "viento_vel": 15.3
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 7.7,
@@ -10622,17 +10614,17 @@
         "precipitacion": 0.0,
         "presion": 996.6,
         "viento_vel": 9.7
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 6.9,
+        "humedad": 80,
+        "precipitacion": 0.0,
+        "presion": 996.7,
+        "viento_vel": 7.1
       }
     ],
     "concepcion": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 7.2,
-        "humedad": 100,
-        "precipitacion": 0.0,
-        "presion": 1009.3,
-        "viento_vel": 2.1
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 7.3,
@@ -11392,17 +11384,17 @@
         "precipitacion": 0.0,
         "presion": 1008.5,
         "viento_vel": 15.8
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 6.8,
+        "humedad": 87,
+        "precipitacion": 0.0,
+        "presion": 1008.8,
+        "viento_vel": 15.1
       }
     ],
     "temuco": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 6.3,
-        "humedad": 99,
-        "precipitacion": 0.0,
-        "presion": 997.7,
-        "viento_vel": 4.1
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 6.3,
@@ -12162,17 +12154,17 @@
         "precipitacion": 0.0,
         "presion": 998.7,
         "viento_vel": 1.4
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 2.2,
+        "humedad": 92,
+        "precipitacion": 0.0,
+        "presion": 998.6,
+        "viento_vel": 1.9
       }
     ],
     "valdivia": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 5.7,
-        "humedad": 70,
-        "precipitacion": 0.0,
-        "presion": 1010.1,
-        "viento_vel": 6.9
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 5.6,
@@ -12932,17 +12924,17 @@
         "precipitacion": 0.0,
         "presion": 1012.2,
         "viento_vel": 5.0
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": 0.7,
+        "humedad": 95,
+        "precipitacion": 0.0,
+        "presion": 1011.9,
+        "viento_vel": 5.2
       }
     ],
     "puertomontt": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": 3.7,
-        "humedad": 79,
-        "precipitacion": 0.0,
-        "presion": 1011.7,
-        "viento_vel": 6.7
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": 3.4,
@@ -13702,17 +13694,17 @@
         "precipitacion": 0.0,
         "presion": 1014.2,
         "viento_vel": 2.6
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": -1.6,
+        "humedad": 96,
+        "precipitacion": 0.0,
+        "presion": 1013.7,
+        "viento_vel": 2.8
       }
     ],
     "coyhaique": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": -8.9,
-        "humedad": 90,
-        "precipitacion": 0.0,
-        "presion": 977.4,
-        "viento_vel": 2.7
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": -8.7,
@@ -14472,17 +14464,17 @@
         "precipitacion": 0.0,
         "presion": 984.2,
         "viento_vel": 0.6
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": -8.5,
+        "humedad": 75,
+        "precipitacion": 0.0,
+        "presion": 983.8,
+        "viento_vel": 0.4
       }
     ],
     "puntaarenas": [
-      {
-        "time": "2026-07-19T03:00",
-        "temperatura": -2.9,
-        "humedad": 84,
-        "precipitacion": 0.0,
-        "presion": 1003.6,
-        "viento_vel": 14.7
-      },
       {
         "time": "2026-07-19T03:30",
         "temperatura": -2.3,
@@ -15242,6 +15234,14 @@
         "precipitacion": 0.0,
         "presion": 1015.3,
         "viento_vel": 16.6
+      },
+      {
+        "time": "2026-07-21T03:00",
+        "temperatura": -0.5,
+        "humedad": 84,
+        "precipitacion": 0.0,
+        "presion": 1015.1,
+        "viento_vel": 15.7
       }
     ]
   },
