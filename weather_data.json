@@ -1,6 +1,6 @@
 {
   "_info": "Estacion meteorologica Chile (16 capitales regionales). Datos de Open-Meteo (open-meteo.com, no oficial), actualizado cada 30 min. Incluye pronostico oficial y un modelo propio (regresion lineal amortiguada sobre el historico acumulado).",
-  "_ultima_actualizacion": "2026-07-22T16:05:55-04:00",
+  "_ultima_actualizacion": "2026-07-22T18:04:31-04:00",
   "regiones": [
     {
       "id": "arica",
@@ -117,244 +117,244 @@
   ],
   "actual": {
     "arica": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 20.1,
-      "humedad": 75,
-      "sensacion": 20.5,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 1010.9,
-      "viento_vel": 10.1,
-      "viento_dir": 250,
-      "rafagas": 27.4,
-      "nubosidad": 5,
-      "es_dia": 1
-    },
-    "iquique": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 20.7,
-      "humedad": 74,
-      "sensacion": 21.6,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 0,
-      "presion": 1011.9,
-      "viento_vel": 7.3,
-      "viento_dir": 237,
-      "rafagas": 23.4,
-      "nubosidad": 1,
-      "es_dia": 1
-    },
-    "antofagasta": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 20.7,
-      "humedad": 70,
-      "sensacion": 21.0,
+      "time": "2026-07-22T18:00",
+      "temperatura": 18.8,
+      "humedad": 82,
+      "sensacion": 19.6,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 0,
       "presion": 1011.1,
-      "viento_vel": 9.1,
-      "viento_dir": 279,
-      "rafagas": 23.0,
-      "nubosidad": 2,
+      "viento_vel": 8.2,
+      "viento_dir": 244,
+      "rafagas": 21.6,
+      "nubosidad": 3,
+      "es_dia": 1
+    },
+    "iquique": {
+      "time": "2026-07-22T18:00",
+      "temperatura": 18.9,
+      "humedad": 87,
+      "sensacion": 20.5,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 0,
+      "presion": 1011.9,
+      "viento_vel": 4.6,
+      "viento_dir": 231,
+      "rafagas": 19.8,
+      "nubosidad": 13,
+      "es_dia": 1
+    },
+    "antofagasta": {
+      "time": "2026-07-22T18:00",
+      "temperatura": 18.4,
+      "humedad": 82,
+      "sensacion": 19.2,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 0,
+      "presion": 1011.7,
+      "viento_vel": 6.8,
+      "viento_dir": 310,
+      "rafagas": 19.1,
+      "nubosidad": 0,
       "es_dia": 1
     },
     "copiapo": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 20.6,
-      "humedad": 56,
-      "sensacion": 19.8,
+      "time": "2026-07-22T18:00",
+      "temperatura": 16.4,
+      "humedad": 82,
+      "sensacion": 17.0,
       "precipitacion": 0.0,
       "lluvia": 0.0,
-      "weather_code": 2,
-      "presion": 969.9,
-      "viento_vel": 8.2,
-      "viento_dir": 280,
-      "rafagas": 22.0,
-      "nubosidad": 59,
+      "weather_code": 3,
+      "presion": 970.3,
+      "viento_vel": 3.2,
+      "viento_dir": 308,
+      "rafagas": 14.4,
+      "nubosidad": 97,
       "es_dia": 1
     },
     "laserena": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 16.6,
-      "humedad": 66,
-      "sensacion": 15.7,
+      "time": "2026-07-22T18:00",
+      "temperatura": 13.7,
+      "humedad": 87,
+      "sensacion": 13.5,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1013.3,
-      "viento_vel": 6.3,
-      "viento_dir": 270,
-      "rafagas": 18.4,
-      "nubosidad": 100,
+      "presion": 1013.1,
+      "viento_vel": 4.2,
+      "viento_dir": 277,
+      "rafagas": 11.5,
+      "nubosidad": 98,
       "es_dia": 1
     },
     "valparaiso": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 15.2,
-      "humedad": 73,
-      "sensacion": 14.4,
+      "time": "2026-07-22T18:00",
+      "temperatura": 13.2,
+      "humedad": 84,
+      "sensacion": 12.6,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1016.6,
-      "viento_vel": 6.2,
-      "viento_dir": 22,
-      "rafagas": 19.8,
-      "nubosidad": 100,
+      "presion": 1016.1,
+      "viento_vel": 4.6,
+      "viento_dir": 51,
+      "rafagas": 17.6,
+      "nubosidad": 99,
       "es_dia": 1
     },
     "santiago": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 14.3,
-      "humedad": 45,
-      "sensacion": 11.9,
+      "time": "2026-07-22T18:00",
+      "temperatura": 12.4,
+      "humedad": 59,
+      "sensacion": 10.9,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 954.7,
-      "viento_vel": 4.3,
-      "viento_dir": 255,
-      "rafagas": 19.8,
-      "nubosidad": 94,
-      "es_dia": 1
+      "presion": 954.0,
+      "viento_vel": 1.5,
+      "viento_dir": 277,
+      "rafagas": 12.2,
+      "nubosidad": 99,
+      "es_dia": 0
     },
     "rancagua": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 14.3,
-      "humedad": 44,
+      "time": "2026-07-22T18:00",
+      "temperatura": 10.9,
+      "humedad": 60,
+      "sensacion": 9.0,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 3,
+      "presion": 957.4,
+      "viento_vel": 2.2,
+      "viento_dir": 346,
+      "rafagas": 4.3,
+      "nubosidad": 99,
+      "es_dia": 0
+    },
+    "talca": {
+      "time": "2026-07-22T18:00",
+      "temperatura": 13.6,
+      "humedad": 77,
       "sensacion": 12.2,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 958.3,
-      "viento_vel": 2.0,
-      "viento_dir": 175,
-      "rafagas": 9.0,
-      "nubosidad": 98,
-      "es_dia": 1
-    },
-    "talca": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 15.4,
-      "humedad": 66,
-      "sensacion": 13.7,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 3,
-      "presion": 1004.9,
-      "viento_vel": 9.7,
-      "viento_dir": 16,
-      "rafagas": 22.0,
-      "nubosidad": 95,
-      "es_dia": 1
+      "presion": 1004.2,
+      "viento_vel": 8.1,
+      "viento_dir": 25,
+      "rafagas": 16.6,
+      "nubosidad": 100,
+      "es_dia": 0
     },
     "chillan": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 13.8,
-      "humedad": 86,
-      "sensacion": 12.0,
+      "time": "2026-07-22T18:00",
+      "temperatura": 13.0,
+      "humedad": 82,
+      "sensacion": 11.0,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1000.9,
-      "viento_vel": 15.5,
-      "viento_dir": 27,
-      "rafagas": 34.6,
-      "nubosidad": 100,
-      "es_dia": 1
+      "presion": 1000.1,
+      "viento_vel": 13.5,
+      "viento_dir": 19,
+      "rafagas": 23.4,
+      "nubosidad": 99,
+      "es_dia": 0
     },
     "concepcion": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 13.5,
-      "humedad": 84,
-      "sensacion": 10.8,
+      "time": "2026-07-22T18:00",
+      "temperatura": 12.4,
+      "humedad": 90,
+      "sensacion": 9.2,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1012.8,
-      "viento_vel": 20.5,
-      "viento_dir": 10,
-      "rafagas": 46.1,
-      "nubosidad": 99,
-      "es_dia": 1
+      "presion": 1012.1,
+      "viento_vel": 23.1,
+      "viento_dir": 17,
+      "rafagas": 48.2,
+      "nubosidad": 100,
+      "es_dia": 0
     },
     "temuco": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 12.5,
-      "humedad": 84,
-      "sensacion": 9.7,
-      "precipitacion": 0.0,
-      "lluvia": 0.0,
-      "weather_code": 2,
-      "presion": 999.2,
-      "viento_vel": 18.5,
-      "viento_dir": 13,
-      "rafagas": 37.4,
-      "nubosidad": 78,
-      "es_dia": 1
-    },
-    "valdivia": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 9.8,
-      "humedad": 97,
-      "sensacion": 8.4,
+      "time": "2026-07-22T18:00",
+      "temperatura": 11.5,
+      "humedad": 86,
+      "sensacion": 8.3,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
-      "presion": 1010.2,
-      "viento_vel": 8.7,
-      "viento_dir": 60,
+      "presion": 998.9,
+      "viento_vel": 20.2,
+      "viento_dir": 23,
+      "rafagas": 41.0,
+      "nubosidad": 97,
+      "es_dia": 0
+    },
+    "valdivia": {
+      "time": "2026-07-22T18:00",
+      "temperatura": 9.4,
+      "humedad": 99,
+      "sensacion": 7.8,
+      "precipitacion": 0.0,
+      "lluvia": 0.0,
+      "weather_code": 3,
+      "presion": 1009.1,
+      "viento_vel": 9.2,
+      "viento_dir": 64,
       "rafagas": 20.2,
       "nubosidad": 100,
-      "es_dia": 1
+      "es_dia": 0
     },
     "puertomontt": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 8.6,
+      "time": "2026-07-22T18:00",
+      "temperatura": 9.1,
       "humedad": 95,
-      "sensacion": 4.7,
-      "precipitacion": 0.2,
-      "lluvia": 0.2,
-      "weather_code": 53,
-      "presion": 1009.2,
-      "viento_vel": 22.3,
-      "viento_dir": 24,
-      "rafagas": 45.4,
+      "sensacion": 4.8,
+      "precipitacion": 0.1,
+      "lluvia": 0.1,
+      "weather_code": 51,
+      "presion": 1008.5,
+      "viento_vel": 26.5,
+      "viento_dir": 19,
+      "rafagas": 50.8,
       "nubosidad": 100,
-      "es_dia": 1
+      "es_dia": 0
     },
     "coyhaique": {
-      "time": "2026-07-22T16:00",
-      "temperatura": -0.4,
-      "humedad": 55,
-      "sensacion": -3.7,
+      "time": "2026-07-22T18:00",
+      "temperatura": -1.4,
+      "humedad": 71,
+      "sensacion": -4.8,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 3,
       "presion": 977.8,
-      "viento_vel": 1.0,
-      "viento_dir": 149,
-      "rafagas": 7.6,
+      "viento_vel": 3.7,
+      "viento_dir": 129,
+      "rafagas": 16.6,
       "nubosidad": 100,
-      "es_dia": 1
+      "es_dia": 0
     },
     "puntaarenas": {
-      "time": "2026-07-22T16:00",
-      "temperatura": 1.7,
-      "humedad": 70,
-      "sensacion": -2.2,
+      "time": "2026-07-22T18:00",
+      "temperatura": 0.2,
+      "humedad": 82,
+      "sensacion": -3.5,
       "precipitacion": 0.0,
       "lluvia": 0.0,
       "weather_code": 1,
-      "presion": 1014.0,
-      "viento_vel": 9.5,
-      "viento_dir": 213,
-      "rafagas": 21.6,
-      "nubosidad": 27,
-      "es_dia": 1
+      "presion": 1014.3,
+      "viento_vel": 8.4,
+      "viento_dir": 225,
+      "rafagas": 18.0,
+      "nubosidad": 29,
+      "es_dia": 0
     }
   },
   "pronostico_oficial": {
@@ -3038,14 +3038,6 @@
   "historico_intradia": {
     "arica": [
       {
-        "time": "2026-07-20T01:00",
-        "temperatura": 15.3,
-        "humedad": 88,
-        "precipitacion": 0.0,
-        "presion": 1013.4,
-        "viento_vel": 1.6
-      },
-      {
         "time": "2026-07-20T01:30",
         "temperatura": 15.2,
         "humedad": 89,
@@ -3804,17 +3796,17 @@
         "precipitacion": 0.0,
         "presion": 1010.9,
         "viento_vel": 10.1
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 18.8,
+        "humedad": 82,
+        "precipitacion": 0.0,
+        "presion": 1011.1,
+        "viento_vel": 8.2
       }
     ],
     "iquique": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 15.8,
-        "humedad": 98,
-        "precipitacion": 0.0,
-        "presion": 1014.1,
-        "viento_vel": 2.7
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 15.7,
@@ -4574,17 +4566,17 @@
         "precipitacion": 0.0,
         "presion": 1011.9,
         "viento_vel": 7.3
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 18.9,
+        "humedad": 87,
+        "precipitacion": 0.0,
+        "presion": 1011.9,
+        "viento_vel": 4.6
       }
     ],
     "antofagasta": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 16.8,
-        "humedad": 84,
-        "precipitacion": 0.0,
-        "presion": 1013.2,
-        "viento_vel": 1.5
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 16.5,
@@ -5344,17 +5336,17 @@
         "precipitacion": 0.0,
         "presion": 1011.1,
         "viento_vel": 9.1
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 18.4,
+        "humedad": 82,
+        "precipitacion": 0.0,
+        "presion": 1011.7,
+        "viento_vel": 6.8
       }
     ],
     "copiapo": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 13.3,
-        "humedad": 93,
-        "precipitacion": 0.2,
-        "presion": 970.0,
-        "viento_vel": 1.9
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 13.0,
@@ -6114,17 +6106,17 @@
         "precipitacion": 0.0,
         "presion": 969.9,
         "viento_vel": 8.2
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 16.4,
+        "humedad": 82,
+        "precipitacion": 0.0,
+        "presion": 970.3,
+        "viento_vel": 3.2
       }
     ],
     "laserena": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 14.2,
-        "humedad": 93,
-        "precipitacion": 0.4,
-        "presion": 1009.7,
-        "viento_vel": 15.2
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 14.5,
@@ -6884,17 +6876,17 @@
         "precipitacion": 0.0,
         "presion": 1013.3,
         "viento_vel": 6.3
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 13.7,
+        "humedad": 87,
+        "precipitacion": 0.0,
+        "presion": 1013.1,
+        "viento_vel": 4.2
       }
     ],
     "valparaiso": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 11.7,
-        "humedad": 96,
-        "precipitacion": 1.1,
-        "presion": 1007.5,
-        "viento_vel": 8.1
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 11.5,
@@ -7654,17 +7646,17 @@
         "precipitacion": 0.0,
         "presion": 1016.6,
         "viento_vel": 6.2
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 13.2,
+        "humedad": 84,
+        "precipitacion": 0.0,
+        "presion": 1016.1,
+        "viento_vel": 4.6
       }
     ],
     "santiago": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 7.1,
-        "humedad": 87,
-        "precipitacion": 0.9,
-        "presion": 946.7,
-        "viento_vel": 9.7
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 7.0,
@@ -8424,17 +8416,17 @@
         "precipitacion": 0.0,
         "presion": 954.7,
         "viento_vel": 4.3
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 12.4,
+        "humedad": 59,
+        "precipitacion": 0.0,
+        "presion": 954.0,
+        "viento_vel": 1.5
       }
     ],
     "rancagua": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 6.8,
-        "humedad": 93,
-        "precipitacion": 0.3,
-        "presion": 949.7,
-        "viento_vel": 7.3
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 6.6,
@@ -9194,17 +9186,17 @@
         "precipitacion": 0.0,
         "presion": 958.3,
         "viento_vel": 2.0
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 10.9,
+        "humedad": 60,
+        "precipitacion": 0.0,
+        "presion": 957.4,
+        "viento_vel": 2.2
       }
     ],
     "talca": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 8.8,
-        "humedad": 92,
-        "precipitacion": 0.1,
-        "presion": 996.7,
-        "viento_vel": 4.7
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 8.6,
@@ -9964,17 +9956,17 @@
         "precipitacion": 0.0,
         "presion": 1004.9,
         "viento_vel": 9.7
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 13.6,
+        "humedad": 77,
+        "precipitacion": 0.0,
+        "presion": 1004.2,
+        "viento_vel": 8.1
       }
     ],
     "chillan": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 6.4,
-        "humedad": 95,
-        "precipitacion": 0.0,
-        "presion": 994.0,
-        "viento_vel": 7.1
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 6.2,
@@ -10734,17 +10726,17 @@
         "precipitacion": 0.0,
         "presion": 1000.9,
         "viento_vel": 15.5
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 13.0,
+        "humedad": 82,
+        "precipitacion": 0.0,
+        "presion": 1000.1,
+        "viento_vel": 13.5
       }
     ],
     "concepcion": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 7.1,
-        "humedad": 92,
-        "precipitacion": 0.0,
-        "presion": 1007.5,
-        "viento_vel": 4.3
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 6.9,
@@ -11504,17 +11496,17 @@
         "precipitacion": 0.0,
         "presion": 1012.8,
         "viento_vel": 20.5
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 12.4,
+        "humedad": 90,
+        "precipitacion": 0.0,
+        "presion": 1012.1,
+        "viento_vel": 23.1
       }
     ],
     "temuco": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 2.3,
-        "humedad": 100,
-        "precipitacion": 0.0,
-        "presion": 997.0,
-        "viento_vel": 3.9
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 2.2,
@@ -12274,17 +12266,17 @@
         "precipitacion": 0.0,
         "presion": 999.2,
         "viento_vel": 18.5
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 11.5,
+        "humedad": 86,
+        "precipitacion": 0.0,
+        "presion": 998.9,
+        "viento_vel": 20.2
       }
     ],
     "valdivia": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 2.8,
-        "humedad": 82,
-        "precipitacion": 0.0,
-        "presion": 1010.8,
-        "viento_vel": 11.3
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 2.6,
@@ -13044,17 +13036,17 @@
         "precipitacion": 0.0,
         "presion": 1010.2,
         "viento_vel": 8.7
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 9.4,
+        "humedad": 99,
+        "precipitacion": 0.0,
+        "presion": 1009.1,
+        "viento_vel": 9.2
       }
     ],
     "puertomontt": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": 3.5,
-        "humedad": 87,
-        "precipitacion": 0.0,
-        "presion": 1012.9,
-        "viento_vel": 9.0
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": 3.4,
@@ -13814,17 +13806,17 @@
         "precipitacion": 0.2,
         "presion": 1009.2,
         "viento_vel": 22.3
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 9.1,
+        "humedad": 95,
+        "precipitacion": 0.1,
+        "presion": 1008.5,
+        "viento_vel": 26.5
       }
     ],
     "coyhaique": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": -12.3,
-        "humedad": 89,
-        "precipitacion": 0.0,
-        "presion": 978.7,
-        "viento_vel": 2.5
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": -12.6,
@@ -14584,17 +14576,17 @@
         "precipitacion": 0.0,
         "presion": 977.8,
         "viento_vel": 1.0
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": -1.4,
+        "humedad": 71,
+        "precipitacion": 0.0,
+        "presion": 977.8,
+        "viento_vel": 3.7
       }
     ],
     "puntaarenas": [
-      {
-        "time": "2026-07-20T01:00",
-        "temperatura": -3.3,
-        "humedad": 77,
-        "precipitacion": 0.0,
-        "presion": 1007.2,
-        "viento_vel": 15.9
-      },
       {
         "time": "2026-07-20T01:30",
         "temperatura": -3.3,
@@ -15354,6 +15346,14 @@
         "precipitacion": 0.0,
         "presion": 1014.0,
         "viento_vel": 9.5
+      },
+      {
+        "time": "2026-07-22T18:00",
+        "temperatura": 0.2,
+        "humedad": 82,
+        "precipitacion": 0.0,
+        "presion": 1014.3,
+        "viento_vel": 8.4
       }
     ]
   },
