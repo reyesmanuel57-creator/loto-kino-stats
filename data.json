@@ -1,6 +1,6 @@
 {
   "_info": "Datos de sorteos Loto/Kino Chile. Actualizado automáticamente por una tarea programada cada 12 horas a partir de fuentes públicas no oficiales (chileresultados.com). Verifica siempre en polla.cl.",
-  "_ultima_actualizacion": "2026-07-22",
+  "_ultima_actualizacion": "2026-07-23",
   "loto": [
     {
       "sorteo": 5448,
@@ -1368,6 +1368,26 @@
         20,
         21,
         24
+      ]
+    },
+    {
+      "sorteo": 3255,
+      "fecha": "2026-07-19",
+      "numeros": [
+        1,
+        5,
+        7,
+        8,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        19,
+        22,
+        23,
+        25
       ]
     }
   ]
