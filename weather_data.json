@@ -1,6 +1,6 @@
 {
   "_info": "Estacion meteorologica Chile (16 capitales regionales). Datos de Open-Meteo (open-meteo.com, no oficial), actualizado cada 30 min. Incluye pronostico oficial y un modelo propio (regresion lineal amortiguada sobre el historico acumulado).",
-  "_ultima_actualizacion": "2026-07-27T11:07:54-04:00",
+  "_ultima_actualizacion": "2026-07-27T11:14:12-04:00",
   "regiones": [
     {
       "id": "arica",
